@@ -27,26 +27,24 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const Todo = collection(db, "TodoList");
 
-// ...existing code...
 
 async function start() {
     const querySnapshot = await getDocs(collection(db, "TodoList"));
     querySnapshot.forEach(async (docSnapshot) => {
         let docId = docSnapshot.id;
         let docFerdig = docSnapshot.data().ferdig;
-        console.log(docId, docFerdig);
 
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.className = "checkbox";
-
-        // Correctly reference the document
+        checkbox.id = docId;
         const docRef = doc(db, "TodoList", docId);
 
         await setDoc(docRef, {
             name: docId,
-            ferdig: false
+            ferdig: docFerdig
         });
+        checkbox.checked = docFerdig;
 
         checkbox.addEventListener("change", async () => {
             if (checkbox.checked) {
@@ -67,10 +65,11 @@ async function start() {
 
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = '<i class="fa-solid fa-dumpster"></i>';
-        deleteButton.addEventListener("click", () => {
+        deleteButton.addEventListener("click",async () => {
             main.removeChild(deleteButton);
             main.removeChild(taskDiv);
             main.removeChild(checkbox);
+            await deleteDoc(doc(db, "TodoList", docId));
         });
 
         main.appendChild(checkbox);
@@ -78,8 +77,6 @@ async function start() {
         main.appendChild(deleteButton);
     });
 }
-
-// ...existing code...
 
 start()
 const addButton = document.querySelector("#add_button");
