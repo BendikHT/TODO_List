@@ -91,60 +91,28 @@ button {
     background-color: blue;
 }
 
-main div {
-    background-color: white;
-}
-
-
-
-
-
-
-/*.checkbox-wrapper-23 *, .checkbox-wrapper-23 *:after,
-.checkbox-wrapper-23 *:before {
-    box-sizing: border-box;
-}
-
-.checkbox-wrapper-23 input {
-    position: absolute;
-    opacity: 0;
-}
-
-.checkbox-wrapper-23 input:checked+label svg path {
-    stroke-dashoffset: 0;
-}
-
-.checkbox-wrapper-23 input:focus+label {
-    transform: scale(1.03);
-}
-
-.checkbox-wrapper-23 input+label {
-    display: block;
-    border: 2px solid #333;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all .2s ease;
-}
-
-.checkbox-wrapper-23 input+label:active {
-    transform: scale(1.05);
-    border-radius: 12px;
-}
-
-.checkbox-wrapper-23 input+label svg {
-    pointer-events: none;
-    padding: 5%;
-}
-
-.checkbox-wrapper-23 input+label svg path {
-    fill: none;
-    stroke: #333;
-    stroke-width: 4px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 100;
-    stroke-dashoffset: 101;
-    transition: all 250ms cubic-bezier(1, 0, .37, .91);
-}*/
+main :nth-child(3n + 3) {
+    padding: 10px;
+  background-color: #e3f2fd;
+  border-radius: 8px 0 0 8px;
+  margin-top: 10px;
+  appearance: none; 
+  width: 25px;
+  height: 25px;
+  border: 2px solid #1976d2;
+  display: inline-block;
+  position: relative;
+  }
+  
+  /* Style 2nd in each group (task text) */
+  main :nth-child(3n + 4) {
+    background-color: #e3f2fd;
+    padding: 5px;
+  }
+  
+  /* Style 3rd in each group (trash button) */
+  main :nth-child(3n + 5) {
+    background-color: #e3f2fd;
+    padding: 5px;
+    border-radius: 0 8px 8px 0;
+  }
