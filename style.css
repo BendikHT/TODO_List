@@ -69,7 +69,8 @@ main {
 }
 
 input,
-button {
+button,
+.lable_container {
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -91,28 +92,68 @@ button {
     background-color: blue;
 }
 
+.lable_container {
+    height: 50px;
+    width: 50px;
+}
+
+.lable_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 50px;
+    border-radius: 6px 0px 0px 6px;
+
+}
+
+.lable_container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.lable_container input:checked~.checkmark:after {
+    display: block;
+}
+
+.lable_container .checkmark:after {
+    top: 21px;
+    left: 21px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
 main :nth-child(3n + 3) {
-    padding: 10px;
-  background-color: #e3f2fd;
-  border-radius: 8px 0 0 8px;
-  margin-top: 10px;
-  appearance: none; 
-  width: 25px;
-  height: 25px;
-  border: 2px solid #1976d2;
-  display: inline-block;
-  position: relative;
-  }
-  
-  /* Style 2nd in each group (task text) */
-  main :nth-child(3n + 4) {
-    background-color: #e3f2fd;
-    padding: 5px;
-  }
-  
-  /* Style 3rd in each group (trash button) */
-  main :nth-child(3n + 5) {
-    background-color: #e3f2fd;
-    padding: 5px;
-    border-radius: 0 8px 8px 0;
-  }
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    border-radius: 6px 0px 0px 6px;
+
+}
+
+/* Style 2nd in each group (task text) */
+main :nth-child(3n + 4) {
+    background-color: white;
+}
+
+/* Style 3rd in each group (trash button) */
+main :nth-child(3n + 5) {
+    background-color: red;
+    border-radius: 0 6px 6px 0;
+}

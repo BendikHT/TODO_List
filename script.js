@@ -34,10 +34,14 @@ async function start() {
         let docId = docSnapshot.id;
         let docFerdig = docSnapshot.data().ferdig;
 
+        const lable_container = document.createElement("label")
+        lable_container.className = "lable_container"
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.className = "checkbox";
         checkbox.id = docId;
+        const span = document.createElement("span")
+        span.className = "checkmark"
         const docRef = doc(db, "TodoList", docId);
 
         await setDoc(docRef, {
@@ -64,7 +68,7 @@ async function start() {
         taskDiv.textContent = docId;
 
         const deleteButton = document.createElement("button");
-        deleteButton.innerHTML = '<i class="fa-solid fa-dumpster"></i>';
+        deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
         deleteButton.addEventListener("click",async () => {
             main.removeChild(deleteButton);
             main.removeChild(taskDiv);
@@ -72,7 +76,11 @@ async function start() {
             await deleteDoc(doc(db, "TodoList", docId));
         });
 
-        main.appendChild(checkbox);
+        lable_container.appendChild(checkbox);
+        lable_container.appendChild(span);
+
+        main.appendChild(lable_container);
+       
         main.appendChild(taskDiv);
         main.appendChild(deleteButton);
     });
@@ -108,7 +116,7 @@ addButton.addEventListener("click", async () => {
         taskDiv.textContent = inputValue;
 
         const deleteButton = document.createElement("button");
-        deleteButton.innerHTML = '<i class="fa-solid fa-dumpster"></i>';
+        deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
         deleteButton.addEventListener("click", () => {
             main.removeChild(deleteButton);
             main.removeChild(taskDiv);
