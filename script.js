@@ -31,8 +31,9 @@ const db = getFirestore(app);
 const Todo = collection(db, username);
 
 
+
 async function start() {
-    const querySnapshot = await getDocs(collection(db, username));
+    const querySnapshot = await getDocs(collection(Todo));
     querySnapshot.forEach(async (docSnapshot) => {
         let docId = docSnapshot.id;
         let docFerdig = docSnapshot.data().ferdig;
@@ -72,7 +73,7 @@ async function start() {
 
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-        deleteButton.addEventListener("click",async () => {
+        deleteButton.addEventListener("click", async () => {
             main.removeChild(deleteButton);
             main.removeChild(taskDiv);
             main.removeChild(lable_container);
@@ -83,7 +84,7 @@ async function start() {
         lable_container.appendChild(span);
 
         main.appendChild(lable_container);
-       
+
         main.appendChild(taskDiv);
         main.appendChild(deleteButton);
     });
@@ -138,7 +139,7 @@ addButton.addEventListener("click", async () => {
         lable_container.appendChild(span);
 
         main.appendChild(lable_container);
-       
+
         main.appendChild(taskDiv);
         main.appendChild(deleteButton);
 

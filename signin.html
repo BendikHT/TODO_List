@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,14 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="signin-container">
         <h1>Sign In</h1>
         <div>
-            <label for="username"> 
+            <label for="username">
                 Username <br>
-                <input type="text" id="username" name="username" required> 
+                <input type="text" id="username" name="username" required>
             </label>
             <label for="password">
                 Password <br>
@@ -26,18 +28,19 @@
         </div>
     </div>
     <script>
-        let username = document.getElementById('username');
-        let password = document.getElementById('password');
-
         function submit() {
-            if (username.value            ) {
-                localStorage.setItem('username', username.value);
-                localStorage.setItem('password', password.value);
+            let usernameid = document.getElementById('username');
+            let passwordid = document.getElementById('password');
+            if (usernameid.value) {
+                localStorage.setItem('username', usernameid.value);
+                localStorage.setItem('password', passwordid.value);
                 window.open("todo.html", "_self");
             } else {
                 return false;
             }
         }
     </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
