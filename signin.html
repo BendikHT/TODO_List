@@ -72,7 +72,6 @@
                 return;
             }
     
-            // Validate password
             let isValidUser = false;
             querySnapshot.forEach((doc) => {
                 const userData = doc.data();
@@ -86,7 +85,6 @@
                 return;
             }
     
-            // Save username to localStorage and redirect
             localStorage.setItem("username", usernameid.value);
             window.open("todo.html", "_self");
         });
