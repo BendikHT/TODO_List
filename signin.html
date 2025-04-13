@@ -24,23 +24,74 @@
                 Password <br>
                 <input type="password" id="password" name="password" required>
             </label>
-            <button onclick="submit()">Sign In</button>
+            <button id="submit">Sign In</button>
         </div>
     </div>
-    <script>
-        function submit() {
-            let usernameid = document.getElementById('username');
-            let passwordid = document.getElementById('password');
-            if (usernameid.value) {
-                localStorage.setItem('username', usernameid.value);
-                localStorage.setItem('password', passwordid.value);
-                window.open("todo.html", "_self");
-            } else {
-                return false;
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+        import {
+            getFirestore,
+            collection,
+            getDocs,
+            query,
+            where,
+        } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+    
+        const firebaseConfig = {
+            apiKey: "AIzaSyAB13PrMaKFBuTwmIEAdfpGtdpEDpMgFx4",
+            authDomain: "todo-list-a92ce.firebaseapp.com",
+            projectId: "todo-list-a92ce",
+            storageBucket: "todo-list-a92ce.firebasestorage.app",
+            messagingSenderId: "26733150867",
+            appId: "1:26733150867:web:6ff60923ec0cc465fc0366",
+            measurementId: "G-S1F4RWE6TQ"
+        };
+    
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+        const User = collection(db, "1UsedUsers");
+    
+        const submitButton = document.getElementById("submit");
+    
+        submitButton.addEventListener("click", async () => {
+            const usernameid = document.getElementById("username");
+            const passwordid = document.getElementById("password");
+    
+            if (!usernameid.value || !passwordid.value) {
+                alert("Please fill in both username and password.");
+                return;
             }
-        }
+    
+            const userQuery = query(User, where("username", "==", usernameid.value));
+            const querySnapshot = await getDocs(userQuery);
+    
+            if (querySnapshot.empty) {
+                alert("Invalid username or password.");
+                return;
+            }
+    
+            // Validate password
+            let isValidUser = false;
+            querySnapshot.forEach((doc) => {
+                const userData = doc.data();
+                if (userData.password === passwordid.value) {
+                    isValidUser = true;
+                }
+            });
+    
+            if (!isValidUser) {
+                alert("Invalid username or password.");
+                return;
+            }
+    
+            // Save username to localStorage and redirect
+            localStorage.setItem("username", usernameid.value);
+            window.open("todo.html", "_self");
+        });
     </script>
-    <script src="script.js"></script>
+
 </body>
 
 </html>

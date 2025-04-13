@@ -69,11 +69,9 @@
         submitButton.addEventListener('click', async () => {
             if (username.value) {
                 localStorage.setItem('username', username.value);
-                localStorage.setItem('email', email.value);
-                localStorage.setItem('password', password.value);
                 const docRef = doc(db, "1UsedUsers", username.value);
                 await setDoc(docRef, {
-                    name: username.value,
+                    username: username.value,
                     password: password.value,
                     email: email.value,
                 });

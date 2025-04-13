@@ -1,6 +1,6 @@
 //330113034040-cjbtfjjjsd14sv4npk7gesoipu2qh1dj.apps.googleusercontent.com
 const username = localStorage.getItem("username");
-
+console.log(username);
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
 import {
@@ -30,10 +30,8 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const Todo = collection(db, username);
 
-
-
 async function start() {
-    const querySnapshot = await getDocs(collection(Todo));
+    const querySnapshot = await getDocs(collection(db, username));
     querySnapshot.forEach(async (docSnapshot) => {
         let docId = docSnapshot.id;
         let docFerdig = docSnapshot.data().ferdig;
