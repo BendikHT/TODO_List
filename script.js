@@ -126,7 +126,7 @@ addButton.addEventListener("click", async () => {
 
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-        deleteButton.addEventListener("click", () => {
+        deleteButton.addEventListener("click", async () => {
             main.removeChild(deleteButton);
             main.removeChild(taskDiv);
             main.removeChild(lable_container);
