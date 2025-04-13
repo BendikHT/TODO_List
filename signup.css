@@ -16,7 +16,7 @@ input{
     width: 200px;
     margin-top: 5px;
 }
-.signin-container div{
+.signup-container div{
     margin: 20px;
     display: grid;
     grid-template-columns: 200px;

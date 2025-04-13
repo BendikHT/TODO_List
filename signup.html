@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In | ToDo</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,19 +13,19 @@
 <body>
     
     <div class="signup-container">
-        <h1>Sign In</h1>
+        <h1>Sign Up</h1>
         <div>
             <label for="username"> 
                 Username <br>
-                <input type="text" name="username" required>
+                <input type="text" name="username" id="username" required>
             </label>
             <label for="email">
                 Email <br>
-                <input type="email" name="email" required>
+                <input type="email" name="email" id="email" >
             </label>
             <label for="password">
                 Password <br>
-                <input type="password" name="password" required>
+                <input type="password" name="password" id="password" >
             </label>
             <button onclick="submit()">Submit</button>
         </div>
@@ -37,12 +37,11 @@
         let password = document.getElementById('password');
 
         function submit() {
-            if (username.value && email.value && password.value) {
+            if (username.value) {
                 localStorage.setItem('username', username.value);
                 localStorage.setItem('email', email.value);
                 localStorage.setItem('password', password.value);
-                window.close(); // Close the current tab
-                
+                window.open("todo.html", "_self");
             } else {
                 return false;
         }

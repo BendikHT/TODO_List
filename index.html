@@ -19,7 +19,7 @@
 
     <div id="logindiv">
         <button onclick="signin()">Sign In</button>
-        <button onclick="sigup()">Sign up</button>
+        <button onclick="signup()">Sign up</button>
     </div>
 
     <script>
@@ -27,9 +27,8 @@
             window.open("signin.html", "_self");
 
         }
-        const windowFeatures = "left=100,top=100,width=600,height=600";
         function signup() {
-            window.open("signup.html", "mozillaWindow", windowFeatures);
+            window.open("signup.html", "_self");
         }
     </script>
 </body>
