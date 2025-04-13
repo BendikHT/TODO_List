@@ -1,0 +1,24 @@
+#logindiv{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(101, 98, 98, 0.734);
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.434);
+}
+
+button{
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    margin: 5px; 
+    font-weight: 500; 
+    font-size: 15px;  
+}
+
+#signup{
+    color: white;
+    background-color: blue;
+}
