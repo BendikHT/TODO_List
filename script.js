@@ -130,6 +130,7 @@ addButton.addEventListener("click", async () => {
             main.removeChild(deleteButton);
             main.removeChild(taskDiv);
             main.removeChild(lable_container);
+            await deleteDoc(doc(db, "TodoList", docId));
         });
 
 
