@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO List</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
+
 <body>
-    
     <div id="overskrift">
         <h1>TODO Liste</h1>
         <i class="fa-solid fa-plus"></i>
     </div>
-
-    <div id="logindiv">
-        <button onclick="signin()">Sign In</button>
-        <button onclick="sigup()">Sign up</button>
-    </div>
-
-    <script>
-        function signin(){
-            window.open("signin.html", "_self");
-
-        }
-        const windowFeatures = "left=100,top=100,width=600,height=600";
-        function signup() {
-            window.open("signup.html", "mozillaWindow", windowFeatures);
-        }
-    </script>
+    <main>
+        <input type="text" placeholder="Add New Tab" id="add_input">
+        <button id="add_button">Add</button>
+    
+    </main>
+    <script type="module" src="script.js"></script>
+     
 </body>
+
 </html>

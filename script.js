@@ -1,3 +1,6 @@
+//330113034040-cjbtfjjjsd14sv4npk7gesoipu2qh1dj.apps.googleusercontent.com
+const username = localStorage.getItem("username");
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
 import {
@@ -25,11 +28,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
-const Todo = collection(db, "TodoList");
+const Todo = collection(db, username);
 
 
 async function start() {
-    const querySnapshot = await getDocs(collection(db, "TodoList"));
+    const querySnapshot = await getDocs(collection(db, username));
     querySnapshot.forEach(async (docSnapshot) => {
         let docId = docSnapshot.id;
         let docFerdig = docSnapshot.data().ferdig;
@@ -42,7 +45,7 @@ async function start() {
         checkbox.id = docId;
         const span = document.createElement("span")
         span.className = "checkmark"
-        const docRef = doc(db, "TodoList", docId);
+        const docRef = doc(db, username, docId);
 
         await setDoc(docRef, {
             name: docId,

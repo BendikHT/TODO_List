@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | ToDo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="signin-container">
+        <h1>Sign In</h1>
+        <div>
+            <label for="username"> 
+                Username <br>
+                <input type="text" id="username" name="username" required> 
+            </label>
+            <label for="password">
+                Password <br>
+                <input type="password" id="password" name="password" required>
+            </label>
+            <button onclick="submit()">Sign In</button>
+        </div>
+    </div>
+    <script>
+        let username = document.getElementById('username');
+        let password = document.getElementById('password');
+
+        function submit() {
+            if (username.value            ) {
+                localStorage.setItem('username', username.value);
+                localStorage.setItem('password', password.value);
+                window.open("todo.html", "_self");
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
