@@ -16,8 +16,8 @@ input{
     width: 200px;
     margin-top: 5px;
 }
-.signin-container div{
-    margin: 20px;
+.signin-container > div{
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 200px;
     grid-auto-rows: 50px;
@@ -28,3 +28,14 @@ button{
     width: 150px;
     height: 30px;
 }
+
+#feilmelding{
+    font-size: 13px;
+    display: block;
+    margin: 0;
+}
+
+#feilmelding > a{
+    margin-left: 5px;
+}
+

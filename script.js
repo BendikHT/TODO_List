@@ -75,7 +75,7 @@ async function start() {
             main.removeChild(deleteButton);
             main.removeChild(taskDiv);
             main.removeChild(lable_container);
-            await deleteDoc(doc(db, "TodoList", docId));
+            await deleteDoc(docRef);
         });
 
         lable_container.appendChild(checkbox);
@@ -104,17 +104,17 @@ addButton.addEventListener("click", async () => {
         checkbox.id = inputValue;
         const span = document.createElement("span")
         span.className = "checkmark"
-        const docRef = doc(db, "TodoList", inputValue);
+        const docRef = doc(db, username, inputValue);
         await setDoc(doc(Todo, inputValue), {
             name: inputValue, ferdig: false
         });
         checkbox.addEventListener("change", async () => {
             if (checkbox.checked) {
-                await setDoc(doc(Todo, inputValue), {
+                await setDoc(docRef, {
                     name: inputValue, ferdig: true
                 });
             } else {
-                await setDoc(doc(Todo, inputValue), {
+                await setDoc(docRef, {
                     name: inputValue, ferdig: false
                 });
             }
@@ -129,7 +129,7 @@ addButton.addEventListener("click", async () => {
             main.removeChild(deleteButton);
             main.removeChild(taskDiv);
             main.removeChild(lable_container);
-            await deleteDoc(doc(db, "TodoList", docId));
+            await deleteDoc(docRef);
         });
 
 

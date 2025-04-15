@@ -60,9 +60,16 @@
         submitButton.addEventListener("click", async () => {
             const usernameid = document.getElementById("username");
             const passwordid = document.getElementById("password");
-    
+            const signin_container = document.querySelector(".signin-container");
+            const feilmelding = document.createElement("div");
+            feilmelding.id = "feilmelding";
+
             if (!usernameid.value || !passwordid.value) {
-                alert("Please fill in both username and password.");
+                feilmelding.innerHTML = "Please fill in all fields.";
+                if (document.getElementById("feilmelding")) {
+                    document.getElementById("feilmelding").remove();
+                }
+                signin_container.appendChild(feilmelding);
                 return;
             }
     
@@ -70,7 +77,11 @@
             const querySnapshot = await getDocs(userQuery);
     
             if (querySnapshot.empty) {
-                alert("Invalid username or password.");
+                feilmelding.innerHTML = "U dont have an account yet. Sign up<a href='signup.html'>her</a>"
+                if (document.getElementById("feilmelding")) {
+                    document.getElementById("feilmelding").remove();
+                }
+                signin_container.appendChild(feilmelding);
                 return;
             }
     
@@ -83,7 +94,11 @@
             });
     
             if (!isValidUser) {
-                alert("Invalid username or password.");
+                feilmelding.innerHTML = "Invalid password. Please try again.";
+                if (document.getElementById("feilmelding")) {
+                    document.getElementById("feilmelding").remove();
+                }
+                signin_container.appendChild(feilmelding);
                 return;
             }
     
