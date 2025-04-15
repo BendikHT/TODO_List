@@ -156,9 +156,9 @@ button {
 
 }
 
-.lable_container input:checked~.checkmark {
+/*.lable_container input:checked~.checkmark {
     
-}
+}*/
 
 .checkmark:after {
     content: "✔";
