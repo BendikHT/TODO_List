@@ -1,4 +1,19 @@
 //330113034040-cjbtfjjjsd14sv4npk7gesoipu2qh1dj.apps.googleusercontent.com
+window.addEventListener("offline", () => {
+    const notification = document.createElement("div");
+    notification.id = "offline-notification";
+    notification.innerText = "You have lost your internet connection.";
+    document.body.appendChild(notification);
+});
+window.addEventListener("online", () => {
+    const notification = document.getElementById("offline-notification");
+    if (notification) {
+        notification.innerHTML = "Connection established"
+        setTimeout(() => notification.style.opacity = "0", 1000)
+        setTimeout(() => notification.remove(), 2000);
+    }
+})
+
 const username = localStorage.getItem("username");
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
