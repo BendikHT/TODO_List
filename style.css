@@ -58,10 +58,28 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 50px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#HomeLogo img{
+    width: 50px;
+    height: 50px;
+}
 
+#HomeLogo a{
+    color: black;
+    font-size: 30px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+#HomeLogo a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .fa-plus {
     margin-left: 10px;
