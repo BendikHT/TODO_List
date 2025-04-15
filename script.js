@@ -82,6 +82,7 @@ async function start() {
         });
 
         const taskDiv = document.createElement("div");
+        taskDiv.className = "taskElm";
         taskDiv.textContent = docId;
 
         const deleteButton = document.createElement("button");
@@ -136,6 +137,7 @@ addButton.addEventListener("click", async () => {
         });
 
         const taskDiv = document.createElement("div");
+        taskDiv.className = "taskElm";
         taskDiv.textContent = inputValue;
 
         const deleteButton = document.createElement("button");
