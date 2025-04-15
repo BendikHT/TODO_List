@@ -42,7 +42,9 @@ i {
 }
 
 :root{
-    --background-color: rgb(24, 113, 190);
+    --background-color: #9BC4CB;
+    --red-color: #bf0603;
+    --blue-color: #2b59c3;
 }
 
 body {
@@ -112,7 +114,7 @@ button,
 }
 
 button {
-    background-color: red;
+    background-color: var(--red-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,7 +126,7 @@ button {
 }
 
 #add_button {
-    background-color: blue;
+    background-color: var(--blue-color);
 }
 
 .lable_container {
@@ -150,17 +152,15 @@ button {
 }
 
 .lable_container input:checked~.checkmark {
-    background-color: #2196F3;
+    background-color: var(--blue-color);
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
 .lable_container input:checked~.checkmark:after {
     display: block;
 }
@@ -182,13 +182,24 @@ main :nth-child(3n + 3) {
 
 }
 
-/* Style 2nd in each group (task text) */
 main :nth-child(3n + 4) {
     background-color: white;
 }
 
-/* Style 3rd in each group (trash button) */
 main :nth-child(3n + 5) {
-    background-color: red;
+    background-color: var(--red-color);
     border-radius: 0 6px 6px 0;
+}
+
+#offline-notification{
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: var(--red-color);
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
 }

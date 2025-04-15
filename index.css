@@ -20,5 +20,5 @@ button{
 
 #signup{
     color: white;
-    background-color: blue;
+    background-color: var(--blue-color);
 }
