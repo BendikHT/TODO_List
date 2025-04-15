@@ -41,7 +41,9 @@ button{
 }
 
 @media (width < 600px) {
-    
+    .signinup-container{
+        width: 95%;
+    }
     input{
         width: 300px;
     }
