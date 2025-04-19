@@ -74,7 +74,7 @@ async function start() {
                     name: docId,
                     ferdig: true
                 });
-                
+
             } else {
                 await setDoc(docRef, {
                     name: docId,
@@ -170,8 +170,11 @@ completedButton.addEventListener("click", () => {
     if (completedTasks.classList.contains("expanded")) {
         completedTasks.classList.remove("expanded");
         completedTasks.style.maxHeight = "0";
+        completedButton.innerHTML = 'Completed Task <i class="fa-solid fa-chevron-down"></i>';
     } else {
         completedTasks.classList.add("expanded");
         completedTasks.style.maxHeight = completedTasks.scrollHeight + "px";
+        completedButton.innerHTML = 'Completed Task <i class="fa-solid fa-chevron-up"></i>';
+
     }
 });
