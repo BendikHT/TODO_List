@@ -41,7 +41,7 @@ i {
     font-size: 30px;
 }
 
-:root{
+:root {
     --background-color: #9BC4CB;
     --red-color: #bf0603;
     --blue-color: #2b59c3;
@@ -50,13 +50,13 @@ i {
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     background-color: var(--background-color);
 }
 
-#HomeLogo{
+#HomeLogo {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -66,13 +66,13 @@ body {
     align-items: center;
 }
 
-#HomeLogo img{
+#HomeLogo img {
     width: 50px;
     height: 50px;
     margin-right: 5px;
 }
 
-#HomeLogo{
+#HomeLogo {
     color: black;
     font-size: 30px;
     margin-left: 10px;
@@ -102,7 +102,7 @@ main {
     display: grid;
     grid-template-columns: 50px 200px 50px;
     grid-auto-rows: 50px;
-    gap: 15px 0px;
+    gap: 10px 0px;
 }
 
 input,
@@ -179,7 +179,7 @@ button {
     transform: translate(-50%, -50%);
 }
 
-.taskElm{
+.taskElm {
     display: flex;
     align-items: center;
     justify-content: left;
@@ -189,11 +189,10 @@ button {
 }
 
 main :nth-child(3n + 5) {
-    background-color: var(--red-color);
     border-radius: 0 6px 6px 0;
 }
 
-#offline-notification{
+#offline-notification {
     opacity: 1;
     position: absolute;
     top: 0;
@@ -204,4 +203,17 @@ main :nth-child(3n + 5) {
     justify-content: center;
     align-items: center;
     transition: opacity 1s ease;
+}
+
+#completedButton {
+    background-color: transparent;
+    width: 300px;
+    justify-content: space-between;
+    font-size: 17px;
+}
+
+#completedTasks {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }

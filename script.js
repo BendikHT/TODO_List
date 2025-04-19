@@ -46,6 +46,7 @@ const db = getFirestore(app);
 const Todo = collection(db, username);
 
 async function start() {
+    document.title = username +" | ToDo";
     const querySnapshot = await getDocs(collection(db, username));
     querySnapshot.forEach(async (docSnapshot) => {
         let docId = docSnapshot.id;
@@ -73,6 +74,7 @@ async function start() {
                     name: docId,
                     ferdig: true
                 });
+                
             } else {
                 await setDoc(docRef, {
                     name: docId,
@@ -162,6 +164,14 @@ addButton.addEventListener("click", async () => {
     }
 });
 
-
-
-
+const completedButton = document.querySelector("#completedButton");
+const completedTasks = document.querySelector("#completedTasks");
+completedButton.addEventListener("click", () => {
+    if (completedTasks.classList.contains("expanded")) {
+        completedTasks.classList.remove("expanded");
+        completedTasks.style.maxHeight = "0";
+    } else {
+        completedTasks.classList.add("expanded");
+        completedTasks.style.maxHeight = completedTasks.scrollHeight + "px";
+    }
+});
