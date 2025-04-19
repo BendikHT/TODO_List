@@ -210,6 +210,8 @@ main :nth-child(3n + 5) {
     width: 300px;
     justify-content: space-between;
     font-size: 17px;
+    margin: 20px 0px 5px 0px;
+
 }
 
 #completedTasks {
