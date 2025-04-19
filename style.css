@@ -152,7 +152,8 @@ button {
     transform: translate(-50%, -50%);
     height: 20px;
     width: 20px;
-    border: 1px solid black;
+    border: 1px solid gray;
+    border-radius: 50%;
 
 }
 
@@ -164,6 +165,7 @@ button {
     content: "✔";
     position: absolute;
     display: none;
+    color: gray;
 }
 
 .lable_container input:checked~.checkmark:after {
@@ -180,7 +182,7 @@ button {
 .taskElm{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     font-size: 20px;
     background-color: white;
 
