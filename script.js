@@ -44,14 +44,16 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const Todo = collection(db, username);
+const completedButton = document.querySelector("#completedButton");
+const completedTasks = document.querySelector("#completedTasks");
 
 async function start() {
-    document.title = username +" | ToDo";
+    document.title = username + " | ToDo";
     const querySnapshot = await getDocs(collection(db, username));
     querySnapshot.forEach(async (docSnapshot) => {
         let docId = docSnapshot.id;
         let docFerdig = docSnapshot.data().ferdig;
-
+    
         const lable_container = document.createElement("label")
         lable_container.className = "lable_container"
         const checkbox = document.createElement("input");
@@ -61,48 +63,66 @@ async function start() {
         const span = document.createElement("span")
         span.className = "checkmark"
         const docRef = doc(db, username, docId);
-
-        await setDoc(docRef, {
-            name: docId,
-            ferdig: docFerdig
+    
+        const taskDiv = document.createElement("div");
+        taskDiv.className = "taskElm";
+        taskDiv.textContent = docId;
+    
+        const deleteButton = document.createElement("button");
+        deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+        deleteButton.addEventListener("click", async () => {
+            const parent = checkbox.checked ? completedTasks : main;
+            parent.removeChild(deleteButton);
+            parent.removeChild(taskDiv);
+            parent.removeChild(lable_container);
+            await deleteDoc(docRef);
         });
-        checkbox.checked = docFerdig;
-
+    
         checkbox.addEventListener("change", async () => {
             if (checkbox.checked) {
                 await setDoc(docRef, {
                     name: docId,
                     ferdig: true
                 });
-
+                main.removeChild(deleteButton);
+                main.removeChild(taskDiv);
+                main.removeChild(lable_container);
+    
+                completedTasks.appendChild(lable_container);
+                completedTasks.appendChild(taskDiv);
+                completedTasks.appendChild(deleteButton);
             } else {
                 await setDoc(docRef, {
                     name: docId,
                     ferdig: false
                 });
+                completedTasks.removeChild(deleteButton);
+                completedTasks.removeChild(taskDiv);
+                completedTasks.removeChild(lable_container);
+    
+                main.appendChild(lable_container);
+                main.appendChild(taskDiv);
+                main.appendChild(deleteButton);
             }
         });
-
-        const taskDiv = document.createElement("div");
-        taskDiv.className = "taskElm";
-        taskDiv.textContent = docId;
-
-        const deleteButton = document.createElement("button");
-        deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-        deleteButton.addEventListener("click", async () => {
-            main.removeChild(deleteButton);
-            main.removeChild(taskDiv);
-            main.removeChild(lable_container);
-            await deleteDoc(docRef);
-        });
-
+    
         lable_container.appendChild(checkbox);
         lable_container.appendChild(span);
-
-        main.appendChild(lable_container);
-
-        main.appendChild(taskDiv);
-        main.appendChild(deleteButton);
+    
+        if (docFerdig === true) {
+            checkbox.checked = true;
+            completedTasks.appendChild(lable_container);
+            completedTasks.appendChild(taskDiv);
+            completedTasks.appendChild(deleteButton);
+        } else {
+            await setDoc(docRef, {
+                name: docId,
+                ferdig: docFerdig
+            });
+            main.appendChild(lable_container);
+            main.appendChild(taskDiv);
+            main.appendChild(deleteButton);
+        }
     });
 }
 
@@ -164,8 +184,7 @@ addButton.addEventListener("click", async () => {
     }
 });
 
-const completedButton = document.querySelector("#completedButton");
-const completedTasks = document.querySelector("#completedTasks");
+
 completedButton.addEventListener("click", () => {
     if (completedTasks.classList.contains("expanded")) {
         completedTasks.classList.remove("expanded");
