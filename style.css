@@ -127,8 +127,14 @@ button {
 
 #add_button {
     background-color: var(--blue-color);
+    
 }
 
+#add_button:active {
+    box-shadow: inset 0px 0px 3px #000000;;
+    scale: 0.95;
+    transition: all 0.1s;
+}
 .lable_container {
     height: 50px;
     width: 50px;
