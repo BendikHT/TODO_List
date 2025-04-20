@@ -229,3 +229,7 @@ main :nth-child(3n + 5) {
 .expanded {
     overflow-y: scroll !important;
 }
+
+.expanded::-webkit-scrollbar {
+    display: none;
+  }
