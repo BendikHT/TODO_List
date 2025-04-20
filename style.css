@@ -130,7 +130,7 @@ button {
     
 }
 
-#add_button:active {
+button:active {
     box-shadow: inset 0px 0px 3px #000000;;
     scale: 0.95;
     transition: all 0.1s;
@@ -224,4 +224,8 @@ main :nth-child(3n + 5) {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+.expanded {
+    overflow-y: scroll !important;
 }

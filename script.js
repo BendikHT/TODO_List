@@ -173,7 +173,7 @@ completedButton.addEventListener("click", () => {
         completedButton.innerHTML = 'Completed Task <i class="fa-solid fa-chevron-down"></i>';
     } else {
         completedTasks.classList.add("expanded");
-        completedTasks.style.maxHeight = completedTasks.scrollHeight + "px";
+        completedTasks.style.maxHeight = "40vh";
         completedButton.innerHTML = 'Completed Task <i class="fa-solid fa-chevron-up"></i>';
 
     }
