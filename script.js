@@ -153,7 +153,8 @@ addButton.addEventListener("click", async () => {
                 });
             } else {
                 await setDoc(docRef, {
-                    name: inputValue, ferdig: false
+                    name: inputValue, 
+                    ferdig: false
                 });
             }
         });
@@ -171,6 +172,33 @@ addButton.addEventListener("click", async () => {
             await deleteDoc(docRef);
         });
 
+        checkbox.addEventListener("change", async () => {
+            if (checkbox.checked) {
+                await setDoc(docRef, {
+                    name: inputValue,
+                    ferdig: true
+                });
+                main.removeChild(deleteButton);
+                main.removeChild(taskDiv);
+                main.removeChild(lable_container);
+    
+                completedTasks.appendChild(lable_container);
+                completedTasks.appendChild(taskDiv);
+                completedTasks.appendChild(deleteButton);
+            } else {
+                await setDoc(docRef, {
+                    name: inputValue,
+                    ferdig: false
+                });
+                completedTasks.removeChild(deleteButton);
+                completedTasks.removeChild(taskDiv);
+                completedTasks.removeChild(lable_container);
+    
+                main.appendChild(lable_container);
+                main.appendChild(taskDiv);
+                main.appendChild(deleteButton);
+            }
+        });
 
         lable_container.appendChild(checkbox);
         lable_container.appendChild(span);
