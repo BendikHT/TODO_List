@@ -105,6 +105,10 @@ main {
     gap: 10px 0px;
 }
 
+#tasks{
+    align-self: center;
+}
+
 input,
 button,
 .lable_container {
