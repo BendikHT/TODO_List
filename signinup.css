@@ -17,14 +17,12 @@
 }
 
 input {
-    display: block;
     height: 50px;
     width: 100%;
     border-radius: 3px;
     padding: 0 10px;
     margin-top: 8px;
     font-size: 14px;
-    font-weight: 300;
     border: 1px solid #eef1f9;
     background-color: #f6f7fa !important;
 }
