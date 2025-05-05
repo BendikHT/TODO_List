@@ -62,7 +62,7 @@ button {
 }
 
 
-@media (width < 600px) {
+@media (width < 420px) {
     .signinup-container {
         width: 95%;
     }
