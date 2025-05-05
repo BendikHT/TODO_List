@@ -56,11 +56,11 @@ button{
 }
 @keyframes rotate{
     0%{
-        transform: rotateY(180deg) rotateX(8deg) scaleY(0) scaleX(0.2);
+        transform: rotateY(180deg) rotateX(8deg) scaleY(0) scaleX(0.1);
         border-radius: 5px;
     }
     20%{
-        transform: rotateY(180deg) rotateX(8deg) scaleY(1) scaleX(0.2);
+        transform: rotateY(180deg) rotateX(8deg) scaleY(1) scaleX(0.1);
         border-radius: 5px;
     }
     40%{
