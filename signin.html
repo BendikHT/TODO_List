@@ -17,17 +17,21 @@
 
     <div class="signinup-container">
         <div>
-            <h1>Welcome Back</h1>
-            <label for="username">
-                Username <br>
-                <input type="text" id="username" name="username" required>
-            </label>
-            <label for="password">
-                Password <br>
-                <input type="password" id="password" name="password" required>
-            </label>
+            <h1>Login Here</h1>
+
+            <label for="username">Username</label>
+            <input type="text" placeholder="Email or Phone" id="username">
+
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="password">
             <button id="submit">Sign In</button>
-        </div>
+            <!--
+                <div class="social">
+                    <div class="go"><i class="fab fa-google"></i> Google</div>
+                    <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+                </div>
+            </div>
+            -->
     </div>
     <script type="module">
         window.addEventListener("offline", () => {
