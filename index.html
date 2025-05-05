@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,28 +11,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-</head>
-<body>
-    <a href="index.html" id="HomeLogo"><img src="favicon_io (7)/android-chrome-512x512.png" alt="Home">ToDo</a>
-    <div id="overskrift">
-        <h1>TODO Liste</h1>
-        <i class="fa-solid fa-plus"></i> 
-    </div>
 
-    <div id="logindiv">
-        <button onclick="signin()">Sign In</button>
-        <button onclick="signup()" id="signup">Sign up</button>
+</head>
+
+<body>
+    <div class="background">
+        <div id="sircle1"></div>
+        <div id="sircle2"></div>
+
+    </div>
+    
+    <a href="index.html" id="HomeLogo"><img src="favicon_io (7)/android-chrome-512x512.png" alt="Home">ToDo</a>
+    <div class="container">
+        <h1>Welcome to TODO Liste</h1>
+        
+        <div id="logindiv">
+            <button onclick="signin()">Sign In</button>
+            <button onclick="signup()" id="signup">Sign up</button>
+        </div>
     </div>
 
     <script>
-        function signin(){
+        function animation(){
+            const sircle1 = document.getElementById("sircle1");
+            const sircle2 = document.getElementById("sircle2");
+
+            sircle1.classList.toggle("animation");
+            sircle2.classList.toggle("animation");
+        }
+        
+        animation();
+
+        function signin() {
             window.open("signin.html", "_self");
-            
+
         }
         function signup() {
             window.open("signup.html", "_self");
         }
     </script>
 </body>
+
 </html>
