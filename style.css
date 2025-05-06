@@ -241,7 +241,14 @@ main :nth-child(3n + 5) {
 
 @media (width < 600px) {
     body{
-        background-image: url("background_turned.svg");
+        background-image: url("background_turned_600px.svg");
+        background-position: bottom;
+    }
+}
+
+@media (width < 400px) {
+    body{
+        background-image: url("background_turned_400px.svg");
         background-position: bottom;
     }
 }
