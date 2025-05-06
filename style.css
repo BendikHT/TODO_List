@@ -57,7 +57,7 @@ body {
     height: 100%;
     background: url("background.svg");
     background-size:cover;
-    background-position: right;
+    background-position: left;
 }
 
 #HomeLogo {
@@ -239,7 +239,7 @@ main :nth-child(3n + 5) {
     display: none;
   }
 
-@media (width < 500px) {
+@media (width < 600px) {
     body{
         background-image: url("background_turned.svg");
         background-position: bottom;
