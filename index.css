@@ -1,11 +1,11 @@
-.container{
+.container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-#logindiv{
+#logindiv {
     width: fit-content;
     display: flex;
     justify-content: center;
@@ -16,23 +16,104 @@
     border: 2px solid rgba(255, 255, 255, 0.434);
 }
 
-button{
+button {
     width: 150px;
     height: 50px;
     background-color: white;
-    margin: 5px; 
-    font-weight: 500; 
-    font-size: 15px;  
+    margin: 5px;
+    font-weight: 500;
+    font-size: 15px;
 }
 
-#signup{
+#signup {
     color: white;
     background-color: var(--blue-color);
 }
 
+.title {
+    position: absolute;
+    width: 530px;
+    height: 150px;
+    left: 218px;
+    top: 283px;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    color: #ffffff;
+}
 
+.description {
+    position: absolute;
+    width: 458px;
+    height: 112px;
+    left: 218px;
+    top: 448px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #ffffff;
+}
 
-/*
+.button-start {
+    position: absolute;
+    width: 243px;
+    height: 67px;
+    left: 218px;
+    top: 609px;
+    background: #3A71A0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.button-login {
+    position: absolute;
+    width: 243px;
+    height: 67px;
+    left: 1628px;
+    top: 49px;
+    background: #092953;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.logo {
+    position: absolute;
+    width: 80px;
+    height: 67px;
+    left: 49px;
+    top: 49px;
+    background-color: #ffffff22;
+    /* Placeholder */
+    border-radius: 10px;
+}
+
+.app-name {
+    position: absolute;
+    width: 171px;
+    height: 70px;
+    left: 93px;
+    top: 46px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+    /*
 .sircle{
     width: 70px;
     height: 70px;
