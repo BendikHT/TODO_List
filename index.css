@@ -36,18 +36,20 @@ body {
     font-family: 'Work Sans', sans-serif;
     position: relative;
     height: 100vh;
-  }
+}
 
-  .logo {
+.logo {
     position: absolute;
-    width: 66px;   /* 80 * 0.823 */
-    height: 55px;  /* 67 * 0.823 */
+    width: 66px;
+    /* 80 * 0.823 */
+    height: 55px;
+    /* 67 * 0.823 */
     left: 2.5vw;
     top: 4.5vh;
     border-radius: 10px;
-  }
+}
 
-  .app-name {
+.app-name {
     position: absolute;
     width: 140px;
     height: 58px;
@@ -59,9 +61,9 @@ body {
     color: #ffffff;
     display: flex;
     align-items: center;
-  }
+}
 
-  .button-login {
+.button-login {
     position: absolute;
     width: 200px;
     height: 55px;
@@ -76,9 +78,9 @@ body {
     justify-content: center;
     color: #ffffff;
     cursor: pointer;
-  }
+}
 
-  .title {
+.title {
     position: absolute;
     width: 436px;
     height: 123px;
@@ -88,9 +90,9 @@ body {
     font-size: 53px;
     line-height: 61px;
     color: #ffffff;
-  }
+}
 
-  .description {
+.description {
     position: absolute;
     width: 377px;
     height: 92px;
@@ -100,9 +102,9 @@ body {
     font-size: 20px;
     line-height: 23px;
     color: #ffffff;
-  }
+}
 
-  .button-start {
+.button-start {
     position: absolute;
     width: 200px;
     height: 55px;
@@ -117,7 +119,23 @@ body {
     justify-content: center;
     color: #ffffff;
     cursor: pointer;
-  }
+}
+
+@media (width < 600px) {
+    .button-login{
+        background-color: #114a96;
+    }
+
+    .title {
+        font-size: 12vw;
+        
+    }
+    
+    .description {
+        font-size: 4vw;
+        
+    }
+}
 
 /*
 .sircle{
