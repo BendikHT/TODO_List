@@ -238,3 +238,10 @@ main :nth-child(3n + 5) {
 .expanded::-webkit-scrollbar {
     display: none;
   }
+
+@media (width < 500px) {
+    body{
+        background-image: url("background_turned.svg");
+        background-position: bottom;
+    }
+}
