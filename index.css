@@ -44,7 +44,6 @@ body {
     height: 55px;  /* 67 * 0.823 */
     left: 2.5vw;
     top: 4.5vh;
-    background-color: #ffffff22;
     border-radius: 10px;
   }
 
@@ -52,7 +51,7 @@ body {
     position: absolute;
     width: 140px;
     height: 58px;
-    left: 4.8vw;
+    left: 6.5vw;
     top: 4.3vh;
     font-weight: 700;
     font-size: 33px;
