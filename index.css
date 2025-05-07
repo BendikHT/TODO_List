@@ -1,4 +1,4 @@
-.maincontainer{
+.maincontainer {
     display: flex;
     height: 100vh;
     flex-direction: column;
@@ -39,18 +39,19 @@
 }
 
 @media (width < 1000px) {
-    .maincontainer{
+    .maincontainer {
         width: 100%;
-        
+
     }
 }
 
-@media (width < 485px){
-    .title{
+@media (width < 485px) {
+    .title {
         width: 95%;
         font-size: 11vw;
     }
-    .description{
+
+    .description {
         width: 87%;
         font-size: 4vw;
     }

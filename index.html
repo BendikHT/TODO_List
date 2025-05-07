@@ -21,8 +21,16 @@
             <div class="app-name">ToDo</div>
         </a>
         <button class="button-login" onclick="signin()">Login</button>
+        <div class="stroke-grid" onclick="dropdown()">
+            <div class="stroke" id="stroke1"></div>
+            <div class="stroke" id="stroke2"></div>
+            <div class="stroke" id="stroke3"></div>
+        </div>
     </div>
-
+    <div class="dropdown">
+        <div class="dropdown-item" onclick="signin()">Sign In</div>
+        <div class="dropdown-item" onclick="signup()">Sign Up</div>
+    </div>
     <div class="maincontainer">
         <div class="title">Welcome to ToDo</div>
         <div class="description">
@@ -40,6 +48,19 @@
         }
         function signup() {
             window.open("signup.html", "_self");
+        }
+
+        function dropdown(){
+            const dropdown = document.querySelector(".dropdown");
+            const stroke1 = document.getElementById("stroke1");
+            const stroke2 = document.getElementById("stroke2");
+            const stroke3 = document.getElementById("stroke3");
+
+            stroke1.classList.toggle("stroke1_animation")
+            stroke2.classList.toggle("stroke2_animation")
+            stroke3.classList.toggle("stroke3_animation")
+            
+            dropdown.classList.toggle("dropdown_visible")
         }
     </script>
 </body>
