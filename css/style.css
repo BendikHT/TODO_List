@@ -142,7 +142,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     opacity: 0;
-    transition: opacity 0.2s ease, margin-top 0.2s ease;
+    transition: opacity 0.2s ease, margin-top 0.2s ease, box-shadow 0.5s ease;
     
 }
 
@@ -177,8 +177,8 @@ body {
 }
 
 .profilemenu li{
-    border-top: 1px solid rgb(107, 107, 107);
     padding: 10px 0px;
+    margin: 10px 0px;
     height: 40px;
     display: flex;
 }
@@ -332,5 +332,9 @@ button {
         height: fit-content;
         width: 18%;
         min-width: 38px;
+    }
+
+    .profilemenu{
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     }
 }
