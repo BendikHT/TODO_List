@@ -38,6 +38,13 @@
     cursor: pointer;
 }
 
+@media (width < 1000px) {
+    .maincontainer{
+        width: 100%;
+        
+    }
+}
+
 @media (width < 600px) {
     .button-login{
         background-color: #114a96;
