@@ -60,28 +60,52 @@ body {
     background-position: left;
 }
 
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: fit-content;
+    padding: 20px
+}
 .logo {
-    position: absolute;
-    width: 66px;   /* 80 * 0.823 */
-    height: 55px;  /* 67 * 0.823 */
-    left: 2.5vw;
-    top: 4.5vh;
+    height: 55px;
     border-radius: 10px;
-  }
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
+#logoImg{
+    height: 55px;
+}
 
-  .app-name {
-    position: absolute;
+.app-name {
     width: 140px;
     height: 58px;
-    left: 6.5vw;
-    top: 4.3vh;
     font-weight: 700;
     font-size: 33px;
     line-height: 39px;
     color: #ffffff;
     display: flex;
     align-items: center;
-  }
+}
+
+.button-login {
+    width: 200px;
+    height: 55px;
+    background: #092953;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 0;
+}
 
 .fa-plus {
     margin-left: 10px;

@@ -1,91 +1,14 @@
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#logindiv {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(101, 98, 98, 0.734);
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid rgba(255, 255, 255, 0.434);
-}
-
-button {
-    width: 150px;
-    height: 50px;
-    background-color: white;
-    margin: 5px;
-    font-weight: 500;
-    font-size: 15px;
-}
-
-#signup {
-    color: white;
-    background-color: var(--blue-color);
-}
-
 body {
     margin: 0;
     background-color: #1a1a1a;
     font-family: 'Work Sans', sans-serif;
     position: relative;
-    height: 100vh;
-}
-
-.logo {
-    position: absolute;
-    width: 66px;
-    /* 80 * 0.823 */
-    height: 55px;
-    /* 67 * 0.823 */
-    left: 2.5vw;
-    top: 4.5vh;
-    border-radius: 10px;
-}
-
-.app-name {
-    position: absolute;
-    width: 140px;
-    height: 58px;
-    left: 6.5vw;
-    top: 4.3vh;
-    font-weight: 700;
-    font-size: 33px;
-    line-height: 39px;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-}
-
-.button-login {
-    position: absolute;
-    width: 200px;
-    height: 55px;
-    right: 2vw;
-    top: 4.5vh;
-    background: #092953;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    cursor: pointer;
+    height: 200vh;
 }
 
 .title {
-    position: absolute;
     width: 436px;
     height: 123px;
-    left: 11.3vw;
-    top: 26vh;
     font-weight: 700;
     font-size: 53px;
     line-height: 61px;
@@ -93,11 +16,8 @@ body {
 }
 
 .description {
-    position: absolute;
     width: 377px;
     height: 92px;
-    left: 11.3vw;
-    top: 41.5vh;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
@@ -105,11 +25,8 @@ body {
 }
 
 .button-start {
-    position: absolute;
     width: 200px;
     height: 55px;
-    left: 11.3vw;
-    top: 56.3vh;
     background: #3A71A0;
     border-radius: 10px;
     font-weight: 700;
@@ -119,6 +36,16 @@ body {
     justify-content: center;
     color: #ffffff;
     cursor: pointer;
+}
+.maincontainer{
+    position: absolute;
+    top: 0;
+    left: 200px;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 @media (width < 600px) {

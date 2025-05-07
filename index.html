@@ -15,28 +15,26 @@
 </head>
 
 <body>
-    <div class="background">
-        <!-- 
-            <div class="sircle" id="sircle1"></div>
-            <div class="sircle" id="sircle2"></div>
-            <div class="line" id="line1"></div>
-            <div class="line" id="line2"></div>
-            
-            <div id="square1"></div>
-        -->
+    <div class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logo.svg" id="logoImg">
+            <div class="app-name">ToDo</div>
+        </a>
+        <button class="button-login" onclick="signin()">Login</button>
     </div>
-    <a href="index.html" class="logo"><img src="logo.svg" alt=""></a>
-    <div class="app-name">ToDo</div>
-    <div class="button-login" onclick="signin()">Login</div>
-    <div class="title">Welcome to ToDo</div>
-    <div class="description">
-      Welcome! Stay organized and on top of your day, add tasks, set deadlines, and check things off as you go. Let's get things done!
+
+    <div class="maincontainer">
+        <div class="title">Welcome to ToDo</div>
+        <div class="description">
+            Welcome! Stay organized and on top of your day, add tasks, set deadlines, and check things off as you go.
+            Let's get things done!
+        </div>
+        <button class="button-start" onclick="signup()">Get Started!</button>
     </div>
-    <div class="button-start" onclick="signup()">Get Started!</div>
-    
+
 
     <script>
-        function animation(){
+        function animation() {
             const sircle1 = document.getElementById("sircle1");
             const sircle2 = document.getElementById("sircle2");
             const line1 = document.getElementById("line1");
@@ -46,10 +44,10 @@
             sircle1.classList.toggle("animation");
             sircle2.classList.toggle("animation");
             line1.classList.toggle("animationline");
-            line2.classList.toggle("animationline");   
+            line2.classList.toggle("animationline");
             square1.classList.toggle("animationsquare");
         }
-        
+
 
         function signin() {
             window.open("signin.html", "_self");
