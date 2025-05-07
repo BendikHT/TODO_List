@@ -28,8 +28,8 @@
         </div>
     </div>
     <div class="dropdown">
-        <div class="dropdown-item" onclick="signin()">Sign In</div>
-        <div class="dropdown-item" onclick="signup()">Sign Up</div>
+        <button onclick="signin()">Sign In</button>
+        <button onclick="signup()">Sign Up</button>
     </div>
     <div class="maincontainer">
         <div class="title">Welcome to ToDo</div>
@@ -59,8 +59,13 @@
             stroke1.classList.toggle("stroke1_animation")
             stroke2.classList.toggle("stroke2_animation")
             stroke3.classList.toggle("stroke3_animation")
-            
             dropdown.classList.toggle("dropdown_visible")
+
+            setTimeout(() => {
+                stroke1.classList.toggle("stroke1_05")
+                stroke2.classList.toggle("stroke2_05")  
+                stroke3.classList.toggle("stroke3_05") 
+            },500)
         }
     </script>
 </body>

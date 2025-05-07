@@ -82,6 +82,16 @@ body {
     height: 55px;
 }
 
+.dropdown button {
+    width: 200px;
+    height: 55px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #092953;
+    font-size: 20px;
+    font-weight: 700;
+}
+
 .app-name {
     width: 140px;
     height: 58px;
@@ -139,17 +149,24 @@ body {
     display: flex;
     z-index: 10;
 }
+.stroke1_05{
+    transform: rotate(45deg);
+    transform-origin: 0%;
+}
 .stroke1_animation{
     animation: stroke1 0.5s linear;
 }
 
-@keyframes stroke1 {
+@keyframes stroke1{
     100%{
         transform: rotate(45deg);
         transform-origin: 0%;
     }
 } 
-
+.stroke2_05{
+    transform: scaleX(0);
+    transform-origin: 0%;
+}
 .stroke2_animation{
     animation: stroke2 0.2s linear;
 }
@@ -158,6 +175,11 @@ body {
         transform: scaleX(0);
         transform-origin: 0%;
     }
+}
+
+.stroke3_05{
+    transform: rotate(-45deg);
+    transform-origin: 0%;
 }
 
 .stroke3_animation{
@@ -210,24 +232,15 @@ button {
     transition: opacity 1s ease;
 }
 
-
+@media (width > 600px){
+    .dropdown{
+        display: none;
+    }
+}
 
 @media (width < 600px) {
     body{
         background-image: url("../bilder/background/background_turned_600px.svg");
-        background-position: bottom;
-    }
-
-    .button-login{
-        background-color: #114a96;
-    }
-
-    
-}
-
-@media (width < 400px) {
-    body{
-        background-image: url("../bilder/background/background_turned_400px.svg");
         background-position: bottom;
     }
 
@@ -237,6 +250,13 @@ button {
 
     .stroke-grid{
         display: grid;
-    }
+    }   
+}
+
+@media (width < 400px) {
+    body{
+        background-image: url("../bilder/background/background_turned_400px.svg");
+        background-position: bottom;
+    } 
 }
 
