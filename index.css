@@ -3,24 +3,32 @@ body {
     background-color: #1a1a1a;
     font-family: 'Work Sans', sans-serif;
     position: relative;
-    height: 200vh;
+    height: 100vh;
+}
+
+.maincontainer{
+    position: absolute;
+    top: 0;
+    left: 200px;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
 }
 
 .title {
     width: 436px;
-    height: 123px;
     font-weight: 700;
     font-size: 53px;
-    line-height: 61px;
     color: #ffffff;
 }
 
 .description {
     width: 377px;
-    height: 92px;
     font-weight: 400;
     font-size: 20px;
-    line-height: 23px;
     color: #ffffff;
 }
 
@@ -36,16 +44,6 @@ body {
     justify-content: center;
     color: #ffffff;
     cursor: pointer;
-}
-.maincontainer{
-    position: absolute;
-    top: 0;
-    left: 200px;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 @media (width < 600px) {
