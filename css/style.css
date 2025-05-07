@@ -77,6 +77,7 @@ body {
     display: flex;
     flex-direction: row;
     text-decoration: none;
+    align-items: center;
 }
 #logoImg{
     height: 55px;
@@ -252,11 +253,17 @@ button {
         display: grid;
     }   
 }
-
-@media (width < 400px) {
+@media (width < 485px) {
     body{
         background-image: url("../bilder/background/background_turned_400px.svg");
         background-position: bottom;
     } 
+    .app-name{
+        font-size: 7vw;
+    }
+    #logoImg{
+        height: fit-content;
+        width: 18%;
+        min-width: 38px;
+    }
 }
-

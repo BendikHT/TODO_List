@@ -19,11 +19,10 @@
             <img src="bilder/logo/logo.svg" id="logoImg">
             <div class="app-name">ToDo</div>
         </a>
-        <button class="button-login" onclick="signin()">Login</button>
     </div>
     <div class="signinup-container">
         <div>
-            <h1>Login Here</h1>
+            <h1>Sign In Here</h1>
 
             <label for="username">Username</label>
             <input type="text" placeholder="Email or Phone" id="username">
@@ -38,98 +37,98 @@
                 </div>
             </div>
             -->
-    </div>
-    <script type="module">
-        window.addEventListener("offline", () => {
-            const notification = document.createElement("div");
-            notification.id = "offline-notification";
-            notification.innerText = "You have lost your internet connection.";
-            document.body.appendChild(notification);
-        });
-        window.addEventListener("online", () => {
-            const notification = document.getElementById("offline-notification");
-            if (notification) {
-                notification.innerHTML = "Connection established"
-                setTimeout(() => notification.style.opacity = "0", 1000)
-                setTimeout(() => notification.remove(), 2000);
-            }
-        })
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-        import {
-            getFirestore,
-            collection,
-            getDocs,
-            query,
-            where,
-        } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAB13PrMaKFBuTwmIEAdfpGtdpEDpMgFx4",
-            authDomain: "todo-list-a92ce.firebaseapp.com",
-            projectId: "todo-list-a92ce",
-            storageBucket: "todo-list-a92ce.firebasestorage.app",
-            messagingSenderId: "26733150867",
-            appId: "1:26733150867:web:6ff60923ec0cc465fc0366",
-            measurementId: "G-S1F4RWE6TQ"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db = getFirestore(app);
-        const User = collection(db, "1UsedUsers");
-
-        const submitButton = document.getElementById("submit");
-
-        submitButton.addEventListener("click", async () => {
-            const usernameid = document.getElementById("username");
-            const passwordid = document.getElementById("password");
-            const signin_container = document.querySelector(".signinup-container");
-            const feilmelding = document.createElement("div");
-            feilmelding.id = "feilmelding";
-
-            if (!usernameid.value || !passwordid.value) {
-                feilmelding.innerHTML = "Please fill in all fields.";
-                if (document.getElementById("feilmelding")) {
-                    document.getElementById("feilmelding").remove();
-                }
-                signin_container.appendChild(feilmelding);
-                return;
-            }
-
-            const userQuery = query(User, where("username", "==", usernameid.value));
-            const querySnapshot = await getDocs(userQuery);
-
-            if (querySnapshot.empty) {
-                feilmelding.innerHTML = "U dont have an account yet. Sign up<a href='signup.html'>her</a>"
-                if (document.getElementById("feilmelding")) {
-                    document.getElementById("feilmelding").remove();
-                }
-                signin_container.appendChild(feilmelding);
-                return;
-            }
-
-            let isValidUser = false;
-            querySnapshot.forEach((doc) => {
-                const userData = doc.data();
-                if (userData.password === passwordid.value) {
-                    isValidUser = true;
-                }
+        </div>
+        <script type="module">
+            window.addEventListener("offline", () => {
+                const notification = document.createElement("div");
+                notification.id = "offline-notification";
+                notification.innerText = "You have lost your internet connection.";
+                document.body.appendChild(notification);
             });
-
-            if (!isValidUser) {
-                feilmelding.innerHTML = "Invalid password. Please try again.";
-                if (document.getElementById("feilmelding")) {
-                    document.getElementById("feilmelding").remove();
+            window.addEventListener("online", () => {
+                const notification = document.getElementById("offline-notification");
+                if (notification) {
+                    notification.innerHTML = "Connection established"
+                    setTimeout(() => notification.style.opacity = "0", 1000)
+                    setTimeout(() => notification.remove(), 2000);
                 }
-                signin_container.appendChild(feilmelding);
-                return;
-            }
+            })
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+            import {
+                getFirestore,
+                collection,
+                getDocs,
+                query,
+                where,
+            } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
-            localStorage.setItem("username", usernameid.value);
-            window.open("todo.html", "_self");
-        });
-    </script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyAB13PrMaKFBuTwmIEAdfpGtdpEDpMgFx4",
+                authDomain: "todo-list-a92ce.firebaseapp.com",
+                projectId: "todo-list-a92ce",
+                storageBucket: "todo-list-a92ce.firebasestorage.app",
+                messagingSenderId: "26733150867",
+                appId: "1:26733150867:web:6ff60923ec0cc465fc0366",
+                measurementId: "G-S1F4RWE6TQ"
+            };
+
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const db = getFirestore(app);
+            const User = collection(db, "1UsedUsers");
+
+            const submitButton = document.getElementById("submit");
+
+            submitButton.addEventListener("click", async () => {
+                const usernameid = document.getElementById("username");
+                const passwordid = document.getElementById("password");
+                const signin_container = document.querySelector(".signinup-container");
+                const feilmelding = document.createElement("div");
+                feilmelding.id = "feilmelding";
+
+                if (!usernameid.value || !passwordid.value) {
+                    feilmelding.innerHTML = "Please fill in all fields.";
+                    if (document.getElementById("feilmelding")) {
+                        document.getElementById("feilmelding").remove();
+                    }
+                    signin_container.appendChild(feilmelding);
+                    return;
+                }
+
+                const userQuery = query(User, where("username", "==", usernameid.value));
+                const querySnapshot = await getDocs(userQuery);
+
+                if (querySnapshot.empty) {
+                    feilmelding.innerHTML = "U dont have an account yet. Sign up<a href='signup.html'>her</a>"
+                    if (document.getElementById("feilmelding")) {
+                        document.getElementById("feilmelding").remove();
+                    }
+                    signin_container.appendChild(feilmelding);
+                    return;
+                }
+
+                let isValidUser = false;
+                querySnapshot.forEach((doc) => {
+                    const userData = doc.data();
+                    if (userData.password === passwordid.value) {
+                        isValidUser = true;
+                    }
+                });
+
+                if (!isValidUser) {
+                    feilmelding.innerHTML = "Invalid password. Please try again.";
+                    if (document.getElementById("feilmelding")) {
+                        document.getElementById("feilmelding").remove();
+                    }
+                    signin_container.appendChild(feilmelding);
+                    return;
+                }
+
+                localStorage.setItem("username", usernameid.value);
+                window.open("todo.html", "_self");
+            });
+        </script>
 
 </body>
 
