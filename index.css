@@ -45,18 +45,13 @@
     }
 }
 
-@media (width < 600px) {
-    .button-login{
-        background-color: #114a96;
+@media (width < 485px){
+    .title{
+        width: 95%;
+        font-size: 11vw;
     }
-
-    .title {
-        font-size: 12vw;
-        
-    }
-    
-    .description {
+    .description{
+        width: 87%;
         font-size: 4vw;
-        
     }
 }

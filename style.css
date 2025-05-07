@@ -263,12 +263,22 @@ main :nth-child(3n + 5) {
         background-image: url("background_turned_600px.svg");
         background-position: bottom;
     }
+
+    .button-login{
+        background-color: #114a96;
+    }
+
+    
 }
 
 @media (width < 400px) {
     body{
         background-image: url("background_turned_400px.svg");
         background-position: bottom;
+    }
+
+    .button-login{
+        display: none;
     }
 }
 
