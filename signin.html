@@ -29,6 +29,7 @@
 
             <label for="password">Password</label>
             <input type="password" placeholder="Password" id="password">
+            <div id="feilmelding_container"></div>
             <button id="submit">Sign In</button>
             <!--
                 <div class="social">
@@ -83,7 +84,7 @@
             submitButton.addEventListener("click", async () => {
                 const usernameid = document.getElementById("username");
                 const passwordid = document.getElementById("password");
-                const signin_container = document.querySelector(".signinup-container");
+                const feilmelding_container = document.getElementById("feilmelding_container");
                 const feilmelding = document.createElement("div");
                 feilmelding.id = "feilmelding";
 
@@ -92,7 +93,7 @@
                     if (document.getElementById("feilmelding")) {
                         document.getElementById("feilmelding").remove();
                     }
-                    signin_container.appendChild(feilmelding);
+                    feilmelding_container.appendChild(feilmelding);
                     return;
                 }
 
@@ -104,7 +105,7 @@
                     if (document.getElementById("feilmelding")) {
                         document.getElementById("feilmelding").remove();
                     }
-                    signin_container.appendChild(feilmelding);
+                    feilmelding_container.appendChild(feilmelding);
                     return;
                 }
 
@@ -121,7 +122,7 @@
                     if (document.getElementById("feilmelding")) {
                         document.getElementById("feilmelding").remove();
                     }
-                    signin_container.appendChild(feilmelding);
+                    feilmelding_container.appendChild(feilmelding);
                     return;
                 }
 
