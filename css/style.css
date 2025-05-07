@@ -132,17 +132,25 @@ body {
     border: 2px solid #092953;
 }
 
-#profilemenu{
+
+.profilemenu{
     position: absolute;
     background-color: white;
     width: 200px;
     right: 20px;
-    margin-top: 10px;
+    margin-top: 100px;
     border-radius: 5px;
     padding: 10px;
+    opacity: 0;
+    transition: opacity 0.2s ease, margin-top 0.2s ease;
+    
 }
 
-#profilemenu ::before{
+.profilemenu_visible{
+    opacity: 1;
+    margin-top: 20px;
+}
+.profilemenu ::before{
     content: "";
     position: absolute;
     width: 10px;
@@ -152,15 +160,27 @@ body {
     top: -5px;
     right: 23px;
 }
-
-#profilemenu a{
+.profilemenu a{
     text-decoration: none;
     color: black;
+    transition: color 0.2s ease;
 }
 
-#profilemenu li{
+.profilemenu a:hover{
+    color: var(--blue-color);
+}
+
+.profilemenu img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.profilemenu li{
     border-top: 1px solid rgb(107, 107, 107);
     padding: 10px 0px;
+    height: 40px;
+    display: flex;
 }
 
 .stroke-grid {
