@@ -186,8 +186,8 @@ body {
 .stroke-grid {
     display: none;
     grid-template-columns: 25px;
-    grid-template-rows: repeat(3, 4px);
-    gap: 4px;
+    grid-template-rows: repeat(3, 5px);
+    gap: 5px;
     cursor: pointer;
     
 }
@@ -217,17 +217,19 @@ body {
 }
 .stroke1_animation{
     transform: rotate(45deg);
-    transform-origin: 0%;
+    transform-origin: top left;
+    width: 30px;
 }
 .stroke2_animation{
     transform: scaleX(0);
-    transform-origin: 0%;
+    transform-origin: top left;
 }
 
 
 .stroke3_animation{
     transform: rotate(-45deg);
-    transform-origin: 0%;
+    transform-origin: bottom left;
+    width: 30px;
 }
 
 
