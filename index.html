@@ -50,7 +50,7 @@
             window.open("signup.html", "_self");
         }
 
-        function dropdown(){
+        function dropdown() {
             const dropdown = document.querySelector(".dropdown");
             const stroke1 = document.getElementById("stroke1");
             const stroke2 = document.getElementById("stroke2");
@@ -60,12 +60,6 @@
             stroke2.classList.toggle("stroke2_animation")
             stroke3.classList.toggle("stroke3_animation")
             dropdown.classList.toggle("dropdown_visible")
-
-            setTimeout(() => {
-                stroke1.classList.toggle("stroke1_05")
-                stroke2.classList.toggle("stroke2_05")  
-                stroke3.classList.toggle("stroke3_05") 
-            },500)
         }
     </script>
 </body>

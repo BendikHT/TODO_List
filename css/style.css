@@ -195,6 +195,7 @@ body {
 .stroke {
     background-color: white;
     border-radius: 5px;
+    transition: all 0.2s linear;
 }
 
 .dropdown{
@@ -214,48 +215,21 @@ body {
     display: flex;
     z-index: 10;
 }
-.stroke1_05{
+.stroke1_animation{
     transform: rotate(45deg);
     transform-origin: 0%;
 }
-.stroke1_animation{
-    animation: stroke1 0.5s linear;
-}
-
-@keyframes stroke1{
-    100%{
-        transform: rotate(45deg);
-        transform-origin: 0%;
-    }
-} 
-.stroke2_05{
+.stroke2_animation{
     transform: scaleX(0);
     transform-origin: 0%;
 }
-.stroke2_animation{
-    animation: stroke2 0.2s linear;
-}
-@keyframes stroke2 {
-    100%{
-        transform: scaleX(0);
-        transform-origin: 0%;
-    }
-}
 
-.stroke3_05{
+
+.stroke3_animation{
     transform: rotate(-45deg);
     transform-origin: 0%;
 }
 
-.stroke3_animation{
-    animation: stroke3 0.5s linear;
-}
-@keyframes stroke3 {
-    100%{
-        transform: rotate(-45deg);
-        transform-origin: 0%;
-    }
-}
 
 main {
     display: grid;
