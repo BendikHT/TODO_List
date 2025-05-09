@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" type="image/x-icon" href="bilder/logo/logo.svg">
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/todo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Setting | ToDo</title>
+        <link rel="icon" type="image/x-icon" href="bilder/logo/logo.svg">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/settings.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    </head>
 </head>
-
 <body>
     <div class="navbar">
         <a href="index.html" class="logo">
@@ -47,20 +46,21 @@
             </div>
         </div>
     </div>
-    <main id="tasks">
-        <input type="text" placeholder="Add New Tab" id="add_input">
-        <button id="add_button">Add</button>
-
-    </main>
-
-    <button id="completedButton"> Completed Task <i class="fa-solid fa-chevron-down"></i></button>
-
-    <main id="completedTasks">
-        
+    <main>
+        <div class="settingsmenu">
+            <ul>
+                <li>
+                    <span>My Profile</span>
+                </li>
+                <li>
+                    <span>Edit Profile</span>
+                </li>
+                <li>
+                    <span>Settings</span>
+                </li>
+            </ul>
+        </div>
     </main>
     <script src="basic.js"></script>
-    <script type="module" src="script.js"></script>
-
 </body>
-
 </html>

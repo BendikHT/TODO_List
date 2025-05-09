@@ -48,7 +48,6 @@ const completedButton = document.querySelector("#completedButton");
 const completedTasks = document.querySelector("#completedTasks");
 
 async function start() {
-    document.title = username + " | ToDo";
     const querySnapshot = await getDocs(collection(db, username));
     querySnapshot.forEach(async (docSnapshot) => {
         let docId = docSnapshot.id;

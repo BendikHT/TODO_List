@@ -60,6 +60,20 @@ body {
     background-position: left;
 }
 
+button {
+    border: none;
+    background-color: var(--red-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:active {
+    box-shadow: inset 0px 0px 3px #000000;
+    scale: 0.95;
+    transition: all 0.1s;
+}
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -232,34 +246,6 @@ body {
     transform: rotate(-45deg);
     transform-origin: bottom left;
     width: 30px;
-}
-
-
-main {
-    display: grid;
-    grid-template-columns: 50px 200px 50px;
-    grid-auto-rows: 50px;
-    gap: 10px 0px;
-}
-
-#tasks{
-    align-self: center;
-}
-
-input,
-button,
-.lable_container {
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-button {
-    background-color: var(--red-color);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #offline-notification {
