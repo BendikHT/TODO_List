@@ -134,6 +134,7 @@ body {
 
 
 .profilemenu{
+    display: none;
     position: absolute;
     background-color: white;
     width: 200px;
@@ -147,10 +148,11 @@ body {
 }
 
 .profilemenu_visible{
+    display: block;
     opacity: 1;
     margin-top: 20px;
 }
-.profilemenu ::before{
+.profilemenu::before{
     content: "";
     position: absolute;
     width: 10px;
