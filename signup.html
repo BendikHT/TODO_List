@@ -89,13 +89,24 @@
         let email = document.getElementById('email');
         let password = document.getElementById('password');
 
+        async function pswEncrypt(string) {
+            const utf8 = new TextEncoder().encode(string);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray
+            .map((bytes) => bytes.toString(16).padStart(2, '0'))
+            .join('');
+            return hashHex;
+        }
+        
+
         submitButton.addEventListener('click', async () => {
             if (username.value) {
                 localStorage.setItem('username', username.value);
                 const docRef = doc(db, "1UsedUsers", username.value);
                 await setDoc(docRef, {
                     username: username.value,
-                    password: password.value,
+                    password: await pswEncrypt(password.value),
                     email: email.value,
                 });
                 window.open("todo.html", "_self");

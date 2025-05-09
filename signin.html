@@ -81,6 +81,16 @@
 
             const submitButton = document.getElementById("submit");
 
+            async function pswEncrypt(string) {
+                const utf8 = new TextEncoder().encode(string);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray
+                    .map((bytes) => bytes.toString(16).padStart(2, '0'))
+                    .join('');
+                return hashHex;
+            }
+
             submitButton.addEventListener("click", async () => {
                 const usernameid = document.getElementById("username");
                 const passwordid = document.getElementById("password");
@@ -109,10 +119,12 @@
                     return;
                 }
 
+                let passwordHash = await pswEncrypt(passwordid.value)
+
                 let isValidUser = false;
                 querySnapshot.forEach((doc) => {
                     const userData = doc.data();
-                    if (userData.password === passwordid.value) {
+                    if (userData.password === passwordHash) {
                         isValidUser = true;
                     }
                 });
