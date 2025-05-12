@@ -45,7 +45,7 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const Todo = collection(db, username);
 const completedButton = document.querySelector("#completedButton");
-const completedTasks = document.querySelector("#completedTasks");
+const completedTasks = document.querySelector(".completedTasks");
 
 async function start() {
     const querySnapshot = await getDocs(collection(db, username));
@@ -215,11 +215,9 @@ addButton.addEventListener("click", async () => {
 completedButton.addEventListener("click", () => {
     if (completedTasks.classList.contains("expanded")) {
         completedTasks.classList.remove("expanded");
-        completedTasks.style.maxHeight = "0";
         completedButton.innerHTML = 'Completed Task <i class="fa-solid fa-chevron-down"></i>';
     } else {
         completedTasks.classList.add("expanded");
-        completedTasks.style.maxHeight = "40vh";
         completedButton.innerHTML = 'Completed Task <i class="fa-solid fa-chevron-up"></i>';
 
     }

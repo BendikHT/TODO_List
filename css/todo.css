@@ -106,16 +106,23 @@ main :nth-child(3n + 5) {
 
 }
 
-#completedTasks {
+.completedTasks {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
 
 .expanded {
-    overflow-y: scroll !important;
+    overflow-y: scroll;
+    max-height: 40vh;
 }
 
 .expanded::-webkit-scrollbar {
     display: none;
+}
+
+@media (width < 600px) {
+   .expanded {
+        max-height: 70vh;
+    }
 }
