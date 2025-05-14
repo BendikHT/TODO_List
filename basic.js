@@ -2,8 +2,7 @@ const username = localStorage.getItem("username");
 const usernameh3 = document.getElementById("usernameh3")
 
 function start() {
-    document.title = username + " | ToDo";
-    usernameh3.innerText = username;
+    
 }
 start()
 
