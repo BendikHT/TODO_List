@@ -1,11 +1,6 @@
 const username = localStorage.getItem("username");
 const usernameh3 = document.getElementById("usernameh3")
 
-function start() {
-    
-}
-start()
-
 function profile() {
     const profilemenu = document.querySelector(".profilemenu");
     profilemenu.classList.toggle("profilemenu_visible")
