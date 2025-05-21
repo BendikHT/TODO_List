@@ -36,6 +36,8 @@
             <input type="checkbox" id="TOCCheckbox">
             <span>I accept <a href="termsofcondition.html">Terms Of Condition</a></span>
         </div>
+        <div id="feilmelding_container"></div>
+
         <button id="submit">Sign up</button>
         <!--
                 <div class="social">
@@ -89,6 +91,7 @@
         const db = getFirestore(app);
 
         const submitButton = document.getElementById('submit');
+        const TOCCheckbox = document.getElementById('TOCCheckbox');
         let username = document.getElementById('username');
         let email = document.getElementById('email');
         let password = document.getElementById('password');
@@ -105,7 +108,7 @@
 
 
         submitButton.addEventListener('click', async () => {
-            if (username.value) {
+            if (username.value && password.value && TOCCheckbox.checked) {
                 localStorage.setItem('username', username.value);
                 const docRef = doc(db, "1UsedUsers", username.value);
                 await setDoc(docRef, {
@@ -115,7 +118,14 @@
                 });
                 window.open("todo.html", "_self");
             } else {
-                return false;
+                const feilmelding_container = document.getElementById("feilmelding_container");
+                const feilmelding = document.createElement("div");
+                feilmelding.id = "feilmelding";
+                if (!username.value || !password.value) {
+                    feilmelding.innerHTML = "Please fill in all fields.";
+                } else if (!TOCCheckbox.checked) {
+                    feilmelding.innerHTML = "Please accept Terms Of Condition.";
+                }
             }
         })
     </script>
