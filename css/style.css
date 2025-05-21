@@ -66,6 +66,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 button:active {
@@ -227,8 +228,8 @@ button:active {
 }
 
 .dropdown_visible{
-    display: flex;
     z-index: 10;
+    display: flex;
 }
 .stroke1_animation{
     transform: rotate(45deg);
