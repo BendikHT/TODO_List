@@ -90,9 +90,10 @@
                 const docSnap = querySnapshot.docs[0];
                 const data = docSnap.data();
                 let remember = data.rememberMe;
-                if (remember = true) {
+                console.log(remember);
+                if (remember == true) {
                     console.log(remember);
-                    window.open("todo.html", "_self");
+                    //window.open("todo.html", "_self");
                 } else {
                     console.log("not remembered");
                 }
