@@ -32,6 +32,10 @@
 
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password">
+        <div class="TOC">
+            <input type="checkbox" id="TOCCheckbox">
+            <span>I accept <a href="termsofcondition.html">Terms Of Condition</a></span>
+        </div>
         <button id="submit">Sign up</button>
         <!--
                 <div class="social">
@@ -94,11 +98,11 @@
             const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
             const hashArray = Array.from(new Uint8Array(hashBuffer));
             const hashHex = hashArray
-            .map((bytes) => bytes.toString(16).padStart(2, '0'))
-            .join('');
+                .map((bytes) => bytes.toString(16).padStart(2, '0'))
+                .join('');
             return hashHex;
         }
-        
+
 
         submitButton.addEventListener('click', async () => {
             if (username.value) {
