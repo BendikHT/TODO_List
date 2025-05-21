@@ -78,17 +78,20 @@
             const analytics = getAnalytics(app);
             const db = getFirestore(app);
             const User = collection(db, "1UsedUsers");
-
+            const usernameid = document.getElementById("username");
+            const passwordid = document.getElementById("password");
             const submitButton = document.getElementById("submit");
-            async function start() {
-                const userQuery = query(User, where("username", "==", username));
+            
+            async function rememberMe() {
+                const userQuery = query(User, where("username", "==", username.value));
                 const querySnapshot = await getDocs(userQuery);
 
                 if (querySnapshot) {
                     console.log(username)
+                    
                 }
             }
-            start();
+            rememberMe();
             async function pswEncrypt(string) {
                 const utf8 = new TextEncoder().encode(string);
                 const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
@@ -100,8 +103,6 @@
             }
 
             submitButton.addEventListener("click", async () => {
-                const usernameid = document.getElementById("username");
-                const passwordid = document.getElementById("password");
                 const feilmelding_container = document.getElementById("feilmelding_container");
                 const feilmelding = document.createElement("div");
                 feilmelding.id = "feilmelding";
@@ -112,7 +113,6 @@
                         document.getElementById("feilmelding").remove();
                     }
                     feilmelding_container.appendChild(feilmelding);
-                    return;
                 }
 
                 const userQuery = query(User, where("username", "==", usernameid.value));

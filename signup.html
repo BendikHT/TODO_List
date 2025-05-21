@@ -93,6 +93,8 @@
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const db = getFirestore(app);
+        const User = collection(db, "1UsedUsers");
+
 
         const submitButton = document.getElementById('submit');
         const TOCCheckbox = document.getElementById('TOCCheckbox');
@@ -103,6 +105,8 @@
         let email = document.getElementById('email');
         let password = document.getElementById('password');
 
+        
+        
         async function pswEncrypt(string) {
             const utf8 = new TextEncoder().encode(string);
             const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
@@ -115,7 +119,12 @@
 
 
         submitButton.addEventListener('click', async () => {
-            if (username.value && password.value && TOCCheckbox.checked) {
+            const userQuery = query(User, where("username", "==", username.value));
+            const querySnapshot = await getDocs(userQuery);
+            if (document.getElementById("feilmelding")) {
+                        document.getElementById("feilmelding").remove();
+            }
+            if (username.value && password.value && TOCCheckbox.checked && querySnapshot.empty) {
                 localStorage.setItem('username', username.value);
                 const docRef = doc(db, "1UsedUsers", username.value);
                 await setDoc(docRef, {
@@ -133,7 +142,11 @@
                     feilmelding.innerHTML = "Please fill in all fields.";
                 } else if (!TOCCheckbox.checked) {
                     feilmelding.innerHTML = "Please accept Terms Of Condition.";
+                } else if (!querySnapshot.empty) {
+                    feilmelding.innerHTML = "Username already exists. Please choose another one.";
                 }
+                feilmelding_container.appendChild(feilmelding);
+                
             }
         })
     </script>
