@@ -35,9 +35,16 @@ strong {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 60%;
+    width: 90%;
+    max-width: 900px;
     background-color: white;
     margin: 100px 0px;
     padding: 10px;
     border-radius: 10px;
+}
+
+@media (width < 600px){
+    .Terms-container {
+        width: 95%;
+    }
 }
