@@ -85,14 +85,15 @@
             const submitButton = document.getElementById("submit");
 
             async function rememberMe() {
+                if (!username) {
+                    return
+                }
                 const userQuery = query(User, where("username", "==", username));
                 const querySnapshot = await getDocs(userQuery);
                 const docSnap = querySnapshot.docs[0];
                 const data = docSnap.data();
                 let remember = data.rememberMe;
-                console.log(remember);
                 if (remember == true) {
-                    console.log(remember);
                     window.open("todo.html", "_self");
                 } else {
                     console.log("not remembered");

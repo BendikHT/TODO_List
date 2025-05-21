@@ -1,7 +1,31 @@
 body{
     background: white;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: calc(100vh - 95px); 
+    position: relative;
+    top: 95px;
 }
 
 .app-name{
     color: black;
+}
+
+.settingsmenu{
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settingsmenu ul{
+    width: 80%;
+}
+
+.settingsmenu li{
+    padding: 10px;
+    background: blue;
+    border-radius: 0px 50% 50% 0px;
+    margin: 10px 0px;
+    
 }
