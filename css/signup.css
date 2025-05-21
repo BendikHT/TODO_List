@@ -3,10 +3,17 @@
     
 }
 
-.TOC{
-    font-size: ;
+#TOC{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 12px;
+    height: fit-content;
+    margin-top: 10px;
 }
 
 #TOCCheckbox{
+    height: 10px;
     width: 10px;
+    margin-top: 0;
 }
