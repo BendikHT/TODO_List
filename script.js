@@ -54,7 +54,7 @@ async function start() {
     querySnapshot.forEach(async (docSnapshot) => {
         let docId = docSnapshot.id;
         let docFerdig = docSnapshot.data().ferdig;
-    
+
         const lable_container = document.createElement("label")
         lable_container.className = "lable_container"
         const checkbox = document.createElement("input");
@@ -64,11 +64,11 @@ async function start() {
         const span = document.createElement("span")
         span.className = "checkmark"
         const docRef = doc(db, username, docId);
-    
+
         const taskDiv = document.createElement("div");
         taskDiv.className = "taskElm";
         taskDiv.textContent = docId;
-    
+
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
         deleteButton.addEventListener("click", async () => {
@@ -78,7 +78,7 @@ async function start() {
             parent.removeChild(lable_container);
             await deleteDoc(docRef);
         });
-    
+
         checkbox.addEventListener("change", async () => {
             if (checkbox.checked) {
                 await setDoc(docRef, {
@@ -88,41 +88,41 @@ async function start() {
                 main.removeChild(deleteButton);
                 main.removeChild(taskDiv);
                 main.removeChild(lable_container);
-    
-                completedTasks.appendChild(lable_container);
-                completedTasks.appendChild(taskDiv);
-                completedTasks.appendChild(deleteButton);
+
+                completedTasks.insertBefore(deleteButton, completedTasks.firstChild);
+                completedTasks.insertBefore(taskDiv, completedTasks.firstChild);
+                completedTasks.insertBefore(lable_container, completedTasks.firstChild);
             } else {
                 await setDoc(docRef, {
                     name: docId,
                     ferdig: false
                 });
-                completedTasks.removeChild(deleteButton);
-                completedTasks.removeChild(taskDiv);
                 completedTasks.removeChild(lable_container);
-    
-                main.appendChild(lable_container);
-                main.appendChild(taskDiv);
-                main.appendChild(deleteButton);
+                completedTasks.removeChild(taskDiv);
+                completedTasks.removeChild(deleteButton);
+
+                main.insertBefore(deleteButton, main.firstChild);
+                main.insertBefore(taskDiv, main.firstChild);
+                main.insertBefore(lable_container, main.firstChild);
             }
         });
-    
+
         lable_container.appendChild(checkbox);
         lable_container.appendChild(span);
-    
+
         if (docFerdig === true) {
             checkbox.checked = true;
-            completedTasks.appendChild(lable_container);
-            completedTasks.appendChild(taskDiv);
-            completedTasks.appendChild(deleteButton);
+            completedTasks.insertBefore(deleteButton, completedTasks.firstChild);
+            completedTasks.insertBefore(taskDiv, completedTasks.firstChild);
+            completedTasks.insertBefore(lable_container, completedTasks.firstChild);
         } else {
             await setDoc(docRef, {
                 name: docId,
                 ferdig: docFerdig
             });
-            main.appendChild(lable_container);
-            main.appendChild(taskDiv);
-            main.appendChild(deleteButton);
+            main.insertBefore(deleteButton, main.firstChild);
+            main.insertBefore(taskDiv, main.firstChild);
+            main.insertBefore(lable_container, main.firstChild);
         }
     });
 }
@@ -154,7 +154,7 @@ addButton.addEventListener("click", async () => {
                 });
             } else {
                 await setDoc(docRef, {
-                    name: inputValue, 
+                    name: inputValue,
                     ferdig: false
                 });
             }
@@ -182,10 +182,10 @@ addButton.addEventListener("click", async () => {
                 main.removeChild(deleteButton);
                 main.removeChild(taskDiv);
                 main.removeChild(lable_container);
-    
-                completedTasks.appendChild(lable_container);
-                completedTasks.appendChild(taskDiv);
-                completedTasks.appendChild(deleteButton);
+
+                completedTasks.insertBefore(deleteButton, completedTasks.firstChild);
+                completedTasks.insertBefore(taskDiv, completedTasks.firstChild);
+                completedTasks.insertBefore(lable_container, completedTasks.firstChild);
             } else {
                 await setDoc(docRef, {
                     name: inputValue,
@@ -194,20 +194,19 @@ addButton.addEventListener("click", async () => {
                 completedTasks.removeChild(deleteButton);
                 completedTasks.removeChild(taskDiv);
                 completedTasks.removeChild(lable_container);
-    
-                main.appendChild(lable_container);
-                main.appendChild(taskDiv);
-                main.appendChild(deleteButton);
+
+                main.insertBefore(deleteButton, main.firstChild);
+                main.insertBefore(taskDiv, main.firstChild);
+                main.insertBefore(lable_container, main.firstChild);
             }
         });
 
         lable_container.appendChild(checkbox);
         lable_container.appendChild(span);
 
-        main.appendChild(lable_container);
-
-        main.appendChild(taskDiv);
-        main.appendChild(deleteButton);
+        main.insertBefore(deleteButton, main.firstChild);
+        main.insertBefore(taskDiv, main.firstChild);
+        main.insertBefore(lable_container, main.firstChild);
 
         addInput.value = "";
     }
