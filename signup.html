@@ -39,6 +39,10 @@
         <div id="feilmelding_container"></div>
 
         <button id="submit">Sign up</button>
+        <div id="rememberMe">
+            <input type="checkbox" id="rememberMeCheckbox">
+            <span>Remember me</span>
+        </div>
         <!--
                 <div class="social">
                     <div class="go"><i class="fab fa-google"></i> Google</div>
@@ -93,6 +97,8 @@
         const submitButton = document.getElementById('submit');
         const TOCCheckbox = document.getElementById('TOCCheckbox');
         const feilmelding_container = document.getElementById("feilmelding_container");
+        const rememberMeCheckbox = document.getElementById('rememberMeCheckbox');
+
         let username = document.getElementById('username');
         let email = document.getElementById('email');
         let password = document.getElementById('password');
@@ -116,6 +122,8 @@
                     username: username.value,
                     password: await pswEncrypt(password.value),
                     email: email.value,
+                    rememberMe: rememberMeCheckbox.checked,
+                    TOC: TOCCheckbox.checked
                 });
                 window.open("todo.html", "_self");
             } else {

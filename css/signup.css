@@ -1,6 +1,10 @@
 .signinup-container{
-    height: 581px;
+    height: 600px;
     
+}
+
+button{
+    margin-top: 10px;
 }
 
 #TOC{
@@ -13,6 +17,20 @@
 }
 
 #TOCCheckbox{
+    height: 15px;
+    width: 15px;
+    margin: 0px 5px 0px 0px;
+}
+
+#rememberMe{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    margin-top: 10px;
+}
+
+#rememberMeCheckbox{
     height: 15px;
     width: 15px;
     margin: 0px 5px 0px 0px;

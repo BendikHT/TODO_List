@@ -80,7 +80,15 @@
             const User = collection(db, "1UsedUsers");
 
             const submitButton = document.getElementById("submit");
+            async function start() {
+                const userQuery = query(User, where("username", "==", username));
+                const querySnapshot = await getDocs(userQuery);
 
+                if (querySnapshot) {
+                    console.log(username)
+                }
+            }
+            start();
             async function pswEncrypt(string) {
                 const utf8 = new TextEncoder().encode(string);
                 const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
