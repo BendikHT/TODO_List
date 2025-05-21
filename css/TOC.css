@@ -1,12 +1,41 @@
-body{
+body {
+    line-height: 1.6;
+    margin: 20px;
+    color: #333;
     height: fit-content;
 }
 
-.Terms-container{
+
+h1,
+h2 {
+    color: #2c3e50;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #000;
+}
+
+.Terms-container {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 90%;
+    width: 60%;
     background-color: white;
     margin: 100px 0px;
     padding: 10px;
