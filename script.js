@@ -101,9 +101,9 @@ async function start() {
                 completedTasks.removeChild(taskDiv);
                 completedTasks.removeChild(deleteButton);
 
-                main.insertBefore(deleteButton, main.firstChild);
-                main.insertBefore(taskDiv, main.firstChild);
-                main.insertBefore(lable_container, main.firstChild);
+                main.appendChild(lable_container);
+                main.appendChild(taskDiv);
+                main.appendChild(deleteButton);
             }
         });
 
@@ -120,9 +120,9 @@ async function start() {
                 name: docId,
                 ferdig: docFerdig
             });
-            main.insertBefore(deleteButton, main.firstChild);
-            main.insertBefore(taskDiv, main.firstChild);
-            main.insertBefore(lable_container, main.firstChild);
+            main.appendChild(lable_container);
+            main.appendChild(taskDiv);
+            main.appendChild(deleteButton);
         }
     });
 }
@@ -167,9 +167,10 @@ addButton.addEventListener("click", async () => {
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
         deleteButton.addEventListener("click", async () => {
-            main.removeChild(deleteButton);
-            main.removeChild(taskDiv);
-            main.removeChild(lable_container);
+            const parent = checkbox.checked ? completedTasks : main;
+            parent.removeChild(deleteButton);
+            parent.removeChild(taskDiv);
+            parent.removeChild(lable_container);
             await deleteDoc(docRef);
         });
 
@@ -204,9 +205,9 @@ addButton.addEventListener("click", async () => {
         lable_container.appendChild(checkbox);
         lable_container.appendChild(span);
 
-        main.insertBefore(deleteButton, main.firstChild);
-        main.insertBefore(taskDiv, main.firstChild);
-        main.insertBefore(lable_container, main.firstChild);
+        main.appendChild(lable_container);
+        main.appendChild(taskDiv);
+        main.appendChild(deleteButton);
 
         addInput.value = "";
     }
