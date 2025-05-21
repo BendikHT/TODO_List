@@ -81,14 +81,14 @@
             const usernameid = document.getElementById("username");
             const passwordid = document.getElementById("password");
             const submitButton = document.getElementById("submit");
-            
+
             async function rememberMe() {
                 const userQuery = query(User, where("username", "==", username.value));
                 const querySnapshot = await getDocs(userQuery);
 
                 if (querySnapshot) {
                     console.log(username)
-                    
+
                 }
             }
             rememberMe();
@@ -124,30 +124,29 @@
                         document.getElementById("feilmelding").remove();
                     }
                     feilmelding_container.appendChild(feilmelding);
-                    return;
-                }
+                } else {
 
-                let passwordHash = await pswEncrypt(passwordid.value)
+                    let passwordHash = await pswEncrypt(passwordid.value)
 
-                let isValidUser = false;
-                querySnapshot.forEach((doc) => {
-                    const userData = doc.data();
+                    let isValidUser = false;
+                    const userDoc = querySnapshot.docs[0];
+                    const userData = userDoc.data();
                     if (userData.password === passwordHash) {
                         isValidUser = true;
                     }
-                });
 
-                if (!isValidUser) {
-                    feilmelding.innerHTML = "Invalid password. Please try again.";
-                    if (document.getElementById("feilmelding")) {
-                        document.getElementById("feilmelding").remove();
+                    if (!isValidUser) {
+                        feilmelding.innerHTML = "Invalid password. Please try again.";
+                        if (document.getElementById("feilmelding")) {
+                            document.getElementById("feilmelding").remove();
+                        }
+                        feilmelding_container.appendChild(feilmelding);
+                        return;
                     }
-                    feilmelding_container.appendChild(feilmelding);
-                    return;
-                }
 
-                localStorage.setItem("username", usernameid.value);
-                window.open("todo.html", "_self");
+                    localStorage.setItem("username", usernameid.value);
+                    window.open("todo.html", "_self");
+                }
             });
         </script>
 

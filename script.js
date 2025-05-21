@@ -50,7 +50,7 @@ const completedTasks = document.querySelector(".completedTasks");
 async function start() {
     document.title = username + " | ToDo";
     usernameh3.innerText = username;
-    const querySnapshot = await getDocs(collection(db, username));
+    const querySnapshot = await getDocs(Todo);
     querySnapshot.forEach(async (docSnapshot) => {
         let docId = docSnapshot.id;
         let docFerdig = docSnapshot.data().ferdig;
