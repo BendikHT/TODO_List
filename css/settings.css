@@ -1,16 +1,19 @@
 body{
     background: white;
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: calc(100vh - 95px); 
-    position: relative;
-    top: 95px;
+    display: block;
 }
 
 .app-name{
     color: black;
 }
-
+main{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 100%;
+    height: calc(100vh - 95px);
+    position: relative;
+    top: 95px;
+}
 .settingsmenu{
     height: 40vh;
     display: flex;
@@ -24,7 +27,29 @@ body{
 
 .settingsmenu li{
     padding: 10px;
-    background: blue;
     border-radius: 0px 20px 20px 0px;
     margin: 10px 0px;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
+.settingsmenu li:hover{
+    background: var(--background-color);
+    color: white;
+}
+
+.active{
+    background: var(--background-color);
+    color: white;
+    transform: translateX(5px);
+}
+.settingscontainer{
+    display: none;
+    background-color: aqua;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#myprofilepage{
+    display: block;
+}
+

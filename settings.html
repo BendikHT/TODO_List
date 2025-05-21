@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +13,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
             integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     </head>
 </head>
+
 <body>
     <div class="navbar">
         <a href="index.html" class="logo">
@@ -28,7 +31,7 @@
                 <h3 id="usernameh3">Your Name</h3>
                 <ul>
                     <li>
-                        <img src="bilder/icons/porfile.svg" alt="My Profile"><a href="#">My profile</a> 
+                        <img src="bilder/icons/porfile.svg" alt="My Profile"><a href="#">My profile</a>
                     </li>
                     <li>
                         <img src="bilder/icons/edit.svg" alt="Edit Profile"><a href="#">Edit Profile</a>
@@ -49,18 +52,63 @@
     <main>
         <div class="settingsmenu">
             <ul>
-                <li>
-                    <span>My Profile</span>
+                <li onclick="select(this)" id="myprofile">
+                    <span >My Profile</span>
                 </li>
-                <li>
-                    <span>Edit Profile</span>
+                <li onclick="select(this)" id="edit">
+                    <span >Edit Profile</span>
                 </li>
-                <li>
-                    <span>Settings</span>
+                <li onclick="select(this)" id="settings">
+                    <span >Settings</span>
                 </li>
             </ul>
         </div>
+        <div class="settingscontainer" id="myprofilepage">
+            <h1>My Profile</h1>
+
+        </div>
+        <div class="settingscontainer" id="editpage">
+            <h1>Edit Profile</h1>
+
+        </div>
+        <div class="settingscontainer" id="settingspage">
+            <h1>Settings</h1>
+
+        </div>
+
     </main>
     <script src="basic.js"></script>
+    <script>
+        const myprofile = document.getElementById("myprofile");
+        const edit = document.getElementById("edit");
+        const settings = document.getElementById("settings");
+
+        function select(elm) {
+            elm.classList.toggle("active");
+            if (elm.id == "myprofile") {
+                myprofile.classList.add("active");
+                edit.classList.remove("active");
+                settings.classList.remove("active");
+                document.getElementById("myprofilepage").style.display = "block";
+                document.getElementById("editpage").style.display = "none";
+                document.getElementById("settingspage").style.display = "none";
+            } else if (elm.id == "edit") {
+                myprofile.classList.remove("active");
+                edit.classList.add("active");
+                settings.classList.remove("active");
+                document.getElementById("myprofilepage").style.display = "none";
+                document.getElementById("editpage").style.display = "block";
+                document.getElementById("settingspage").style.display = "none";
+            } else if (elm.id == "settings") {
+                myprofile.classList.remove("active");
+                edit.classList.remove("active");
+                settings.classList.add("active");
+                document.getElementById("myprofilepage").style.display = "none";
+                document.getElementById("editpage").style.display = "none";
+                document.getElementById("settingspage").style.display = "block";
+            }
+        }
+    </script>
 </body>
+
 </html>
