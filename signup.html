@@ -92,6 +92,7 @@
 
         const submitButton = document.getElementById('submit');
         const TOCCheckbox = document.getElementById('TOCCheckbox');
+        const feilmelding_container = document.getElementById("feilmelding_container");
         let username = document.getElementById('username');
         let email = document.getElementById('email');
         let password = document.getElementById('password');
@@ -118,7 +119,6 @@
                 });
                 window.open("todo.html", "_self");
             } else {
-                const feilmelding_container = document.getElementById("feilmelding_container");
                 const feilmelding = document.createElement("div");
                 feilmelding.id = "feilmelding";
                 if (!username.value || !password.value) {
