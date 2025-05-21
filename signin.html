@@ -40,6 +40,8 @@
             -->
         </div>
         <script type="module">
+        const username = localStorage.getItem("username");
+
             window.addEventListener("offline", () => {
                 const notification = document.createElement("div");
                 notification.id = "offline-notification";
@@ -83,12 +85,16 @@
             const submitButton = document.getElementById("submit");
 
             async function rememberMe() {
-                const userQuery = query(User, where("username", "==", username.value));
+                const userQuery = query(User, where("username", "==", username));
                 const querySnapshot = await getDocs(userQuery);
-
-                if (querySnapshot) {
-                    console.log(username)
-
+                const docSnap = querySnapshot.docs[0];
+                const data = docSnap.data();
+                let remember = data.rememberMe;
+                if (remember = true) {
+                    console.log(remember);
+                    window.open("todo.html", "_self");
+                } else {
+                    console.log("not remembered");
                 }
             }
             rememberMe();
