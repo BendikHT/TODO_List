@@ -52,8 +52,8 @@
     <main>
         <div class="settingsmenu">
             <ul>
-                <li onclick="select(this)" id="myprofile" class="active">
-                    <span >My Profile</span>
+                <li onclick="select(this)" id="personalinfo" class="active">
+                    <span >Personal Information</span>
                 </li>
                 <li onclick="select(this)" id="edit">
                     <span >Edit Profile</span>
@@ -63,47 +63,57 @@
                 </li>
             </ul>
         </div>
-        <div class="settingscontainer" id="myprofilepage">
-            <h1>My Profile</h1>
+        <div class="settingscontainer" id="personalinfopage">
+            <header>
+                <h1>Personal Inforamtion</h1>
+                <span>Administrate your personal information</span>
+            </header>
+            
 
         </div>
         <div class="settingscontainer" id="editpage">
-            <h1>Edit Profile</h1>
+            <header>
+                <h1>Edit Profile</h1>
+                <span>Edit your profile and customize it</span>
+            </header>
 
         </div>
         <div class="settingscontainer" id="settingspage">
-            <h1>Settings</h1>
+            <header>
+                <h1>Settings</h1>
+                <span>Edit prefrences and your profile settings</span>
+            </header>
 
         </div>
 
     </main>
     <script src="basic.js"></script>
     <script>
-        const myprofile = document.getElementById("myprofile");
+        const personalinfo = document.getElementById("personalinfo");
         const edit = document.getElementById("edit");
         const settings = document.getElementById("settings");
 
         function select(elm) {
             elm.classList.toggle("active");
-            if (elm.id == "myprofile") {
-                myprofile.classList.add("active");
+            if (elm.id == "personalinfo") {
+                personalinfo.classList.add("active");
                 edit.classList.remove("active");
                 settings.classList.remove("active");
-                document.getElementById("myprofilepage").style.display = "block";
+                document.getElementById("personalinfopage").style.display = "block";
                 document.getElementById("editpage").style.display = "none";
                 document.getElementById("settingspage").style.display = "none";
             } else if (elm.id == "edit") {
-                myprofile.classList.remove("active");
+                personalinfo.classList.remove("active");
                 edit.classList.add("active");
                 settings.classList.remove("active");
-                document.getElementById("myprofilepage").style.display = "none";
+                document.getElementById("personalinfopage").style.display = "none";
                 document.getElementById("editpage").style.display = "block";
                 document.getElementById("settingspage").style.display = "none";
             } else if (elm.id == "settings") {
-                myprofile.classList.remove("active");
+                personalinfo.classList.remove("active");
                 edit.classList.remove("active");
                 settings.classList.add("active");
-                document.getElementById("myprofilepage").style.display = "none";
+                document.getElementById("personalinfopage").style.display = "none";
                 document.getElementById("editpage").style.display = "none";
                 document.getElementById("settingspage").style.display = "block";
             }
