@@ -72,7 +72,7 @@ section div h1,span{
 }
 main{
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 25% 75%;
     width: 100%;
     height: calc(100vh - 95px);
     position: relative;
@@ -114,5 +114,29 @@ main{
 
 #personalinfopage{
     display: block;
+}
+
+@media (width < 1000px) {
+    main{
+        grid-template-columns: 100%;
+        grid-auto-rows: max-content;
+    }
+
+    .settingscontainer{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    
+    .settingsmenu{
+        height: 60px;
+    }
+
+    .settingsmenu ul{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .active
 }
 
