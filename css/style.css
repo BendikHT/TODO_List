@@ -95,7 +95,7 @@ button:active {
     align-items: center;
 }
 #logoImg{
-    height: 55px;
+    height: 45px;
 }
 
 .dropdown button {
@@ -109,14 +109,11 @@ button:active {
 }
 
 .app-name {
-    width: 140px;
-    height: 58px;
     font-weight: 700;
     font-size: 33px;
-    line-height: 39px;
+    width: 60px;
     color: #ffffff;
-    display: flex;
-    align-items: center;
+    margin-left: 10px;
 }
 
 .button-login {
@@ -294,11 +291,7 @@ button:active {
     .app-name{
         font-size: 7vw;
     }
-    #logoImg{
-        height: fit-content;
-        width: 18%;
-        min-width: 38px;
-    }
+    
 
     .profilemenu{
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.264);
