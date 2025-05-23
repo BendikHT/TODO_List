@@ -190,5 +190,8 @@ main {
         border-bottom: none;
         padding: 20px 0px 10px 0px;
     }
+    section{
+        width: 90%;
+    }
 
 }
