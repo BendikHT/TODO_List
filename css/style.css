@@ -45,6 +45,7 @@ i {
     --background-color: #9BC4CB;
     --red-color: #bf0603;
     --blue-color: #2b59c3;
+    --gray-lines: rgba(0, 0, 0, 0.17);
 }
 
 body {
