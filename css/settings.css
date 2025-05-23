@@ -1,9 +1,9 @@
-body{
+body {
     background: white;
     display: block;
 }
 
-header{
+header {
     width: 80%;
     margin: auto;
     display: flex;
@@ -13,19 +13,19 @@ header{
     padding-bottom: 10px;
 }
 
-header > h1{
+header>h1 {
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 20px;
 }
 
-header > h2{
+header>h2 {
     font-size: 15px;
     font-weight: 400;
     color: var(--gray-text);
 }
 
-section{
+section {
     width: 80%;
     margin: 10px auto;
     display: flex;
@@ -35,42 +35,44 @@ section{
     border: 1px solid var(--gray-lines);
     border-radius: 20px;
     padding: 15px;
-    
+
 }
 
-section > h1{
+section>h1 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
-section div{
+section div {
     display: grid;
     grid-template-columns: 30% 70%;
     align-items: flex-end;
     width: 100%;
 }
 
-section div h1{
+section div h1 {
     font-size: 15px;
     font-weight: 600;
 }
 
-section div span{
+section div span {
     font-size: 20px;
     font-weight: 400;
     color: var(--gray-text);
 }
 
-section div h1,span{
+section div h1,
+span {
     border-bottom: 1px solid var(--gray-lines);
     padding: 20px 0px;
 }
 
-.app-name{
+.app-name {
     color: black;
 }
-main{
+
+main {
     display: grid;
     grid-template-columns: 25% 75%;
     width: 100%;
@@ -78,65 +80,89 @@ main{
     position: relative;
     top: 95px;
 }
-.settingsmenu{
+
+.settingsmenu {
     height: 40vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.settingsmenu ul{
+.settingsmenu ul {
     width: 80%;
 }
 
-.settingsmenu li{
+.settingsmenu li {
     padding: 10px;
     border-radius: 0px 20px 20px 0px;
     margin: 10px 0px;
     cursor: pointer;
     transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    ;
 }
-.settingsmenu li:hover{
+
+.settingsmenu li:hover {
     background: var(--background-color);
     color: white;
 }
 
-.active{
+.active {
     background: var(--background-color);
     color: white;
     transform: translateX(5px);
 }
-.settingscontainer{
+
+.settingscontainer {
     display: none;
     grid-column: 2/3;
     grid-row: 1/2;
 }
 
-#personalinfopage{
+#personalinfopage {
     display: block;
 }
 
 @media (width < 1000px) {
-    main{
+    main {
         grid-template-columns: 100%;
         grid-auto-rows: max-content;
     }
 
-    .settingscontainer{
+    .settingscontainer {
         grid-column: 1/2;
         grid-row: 2/3;
     }
-    
-    .settingsmenu{
+
+    .settingsmenu {
         height: 60px;
     }
 
-    .settingsmenu ul{
+    .settingsmenu ul {
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        overflow-x: scroll;
+        
     }
-    .active
-}
 
+    .settingsmenu ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    .settingsmenu ul {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .settingsmenu li {
+        margin: 0px 10px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .settingsmenu li p {
+        width: 180px;
+    }
+
+}
