@@ -143,7 +143,7 @@ main {
         flex-direction: row;
         justify-content: space-evenly;
         overflow-x: scroll;
-        
+
     }
 
     .settingsmenu ul::-webkit-scrollbar {
@@ -163,6 +163,32 @@ main {
 
     .settingsmenu li p {
         width: 180px;
+    }
+
+}
+
+@media (width < 600px) {
+    section div {
+        grid-template-columns: 100%;
+        align-items: center;
+    }
+
+    section div h1 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    section div span {
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--gray-text);
+        padding: 5px 0px 20px 0px;
+    }
+
+    section div h1
+    {
+        border-bottom: none;
+        padding: 20px 0px 10px 0px;
     }
 
 }
