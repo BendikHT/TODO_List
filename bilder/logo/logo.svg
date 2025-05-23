@@ -1,18 +1,14 @@
-<svg width="222" height="187" viewBox="0 0 222 187" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="5" y="19" width="163" height="163" rx="20" stroke="#5BA7BC" stroke-width="10"/>
-<g filter="url(#filter0_d_18_15)">
-<path d="M32 86.6707C71.2239 110.573 94.3284 153 94.3284 153C94.3284 153 129.254 58.5854 212 6" stroke="black" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<filter id="filter0_d_18_15" x="21.9993" y="-0.000610352" width="200.001" height="167.001" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="2.5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_15"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_15" result="shape"/>
-</filter>
-</defs>
+<svg width="186" height="235" viewBox="0 0 186 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="152.549" width="46.937" height="167.654" transform="rotate(45 152.549 0)" fill="#0F698F"/>
+<rect y="85.1895" width="46.937" height="79.0236" transform="rotate(-45 0 85.1895)" fill="#0F698F"/>
+<rect x="17.4985" y="99.1455" width="22.2076" height="62.3083" transform="rotate(-45 17.4985 99.1455)" fill="#D9D9D9" stroke="#0B4963" stroke-width="5"/>
+<rect x="152.52" y="31.5021" width="22.1968" height="127.304" transform="rotate(45 152.52 31.5021)" fill="#D9D9D9" stroke="#0B4963" stroke-width="5"/>
+<rect x="152.549" y="35" width="46.937" height="167.654" transform="rotate(45 152.549 35)" fill="#1698D0"/>
+<rect y="120.189" width="46.937" height="79.0236" transform="rotate(-45 0 120.189)" fill="#1698D0"/>
+<rect x="152.509" y="65.4923" width="22.9077" height="127.304" transform="rotate(45 152.509 65.4923)" fill="#D9D9D9" stroke="#0F698F" stroke-width="5"/>
+<rect x="17.0105" y="133.616" width="22.8616" height="61.99" transform="rotate(-45 17.0105 133.616)" fill="#D9D9D9" stroke="#0F698F" stroke-width="5"/>
+<rect x="152.549" y="69" width="46.937" height="167.654" transform="rotate(45 152.549 69)" fill="#75CBF0"/>
+<rect y="154.189" width="46.937" height="79.0236" transform="rotate(-45 0 154.189)" fill="#75CBF0"/>
+<path d="M89.2201 198H44.4182L39.5 193H94.2218L89.2201 198Z" fill="#1698D0" stroke="#1698D0"/>
+<rect x="23" y="235" width="37" height="89" transform="rotate(-90 23 235)" fill="#75CBF0"/>
 </svg>
