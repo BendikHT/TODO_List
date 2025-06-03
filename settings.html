@@ -70,13 +70,20 @@
             </header>
             <section>
                 <h1>Essential Information</h1>
+                <button id="saveButton">Save</button>
                 <div>
                     <h1>Name</h1>
-                    <span>Your Name</span>
+                    <button id="name" onclick="essentilainfo(this)">Your Name</button>
+                    <div id="namediv" class="essentilainfodiv">
+                    </div>
                     <h1>Dath Of Birth</h1>
-                    <span>Your Date</span>
+                    <button id="birthday" onclick="essentilainfo(this)">Select Birthday</button>
+                    <div id="birthdaydiv" class="essentilainfodiv">
+                    </div>
                     <h1>Gender</h1>
-                    <span>Your Gender</span>
+                    <button id="gender" onclick="essentilainfo(this)">Select gender</button>
+                    <div id="genderdiv" class="essentilainfodiv">
+                    </div>
                 </div>
             </section>
 
@@ -102,6 +109,7 @@
         const personalinfo = document.getElementById("personalinfo");
         const edit = document.getElementById("edit");
         const settings = document.getElementById("settings");
+        const essentilainfodiv = document.getElementsByClassName("essentilainfodiv");
 
         function select(elm) {
             elm.classList.toggle("active");
@@ -128,6 +136,26 @@
                 document.getElementById("settingspage").style.display = "block";
             }
         }
+        function essentilainfo(elm){
+            const namediv = document.getElementById("namediv");
+            const birthdaydiv = document.getElementById("birthdaydiv");
+            const genderdiv = document
+            document.getElementById(elm.id + "div").style.display = "flex";
+            if(elm.id == "name"){
+                namediv.style.display = "flex";
+                birthdaydiv.style.display = "none";
+                genderdiv.style.display = "none";
+            } else if(elm.id == "birthday"){
+                namediv.style.display = "none";
+                birthdaydiv.style.display = "flex";
+                genderdiv.style.display = "none";
+            } else if(elm.id == gender){
+                namediv.style.display = "none";
+                birthdaydiv.style.display = "none";
+                genderdiv.style.display = "flex";
+            }
+        }
+        essentilainfodiv.addEventListener("")
     </script>
 </body>
 

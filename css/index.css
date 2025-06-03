@@ -1,3 +1,19 @@
+button {
+    border: none;
+    background-color: var(--red-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: inset 0px 0px 3px #000000;
+    scale: 0.95;
+    transition: all 0.1s;
+}
+
 .maincontainer {
     display: flex;
     height: 100vh;
@@ -37,6 +53,7 @@
     color: #ffffff;
     cursor: pointer;
 }
+
 
 @media (width < 1000px) {
     .maincontainer {

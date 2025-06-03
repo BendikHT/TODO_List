@@ -41,6 +41,13 @@ i {
     font-size: 30px;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+}
+
 :root {
     --background-color: #9BC4CB;
     --red-color: #bf0603;
@@ -60,21 +67,6 @@ body {
     background-position: left;
 }
 
-button {
-    border: none;
-    background-color: var(--red-color);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-button:active {
-    box-shadow: inset 0px 0px 3px #000000;
-    scale: 0.95;
-    transition: all 0.1s;
-}
 .navbar{
     display: flex;
     justify-content: space-between;

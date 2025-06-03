@@ -13,6 +13,23 @@ header {
     padding-bottom: 10px;
 }
 
+#saveButton {
+    background-color: transparent;
+    color: rgb(63, 63, 219);
+    font-size: 15px;
+    font-weight: 600;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#saveButton:active {
+    box-shadow: none;
+    scale: 1;
+    font-size: 14px;
+    transition: all 0.1s;
+}
+
 header>h1 {
     font-size: 30px;
     font-weight: 400;
@@ -35,6 +52,7 @@ section {
     border: 1px solid var(--gray-lines);
     border-radius: 20px;
     padding: 15px;
+    position: relative;
 
 }
 
@@ -44,28 +62,46 @@ section>h1 {
     margin-bottom: 20px;
 }
 
-section div {
+section>div {
     display: grid;
     grid-template-columns: 30% 70%;
     align-items: flex-end;
     width: 100%;
 }
 
-section div h1 {
+section>div h1 {
     font-size: 15px;
     font-weight: 600;
 }
 
-section div span {
+section>div button {
     font-size: 20px;
     font-weight: 400;
     color: var(--gray-text);
+    width: 100%;
+    text-align: left;
 }
 
-section div h1,
-span {
+section>div h1,
+section>div button {
     border-bottom: 1px solid var(--gray-lines);
     padding: 20px 0px;
+}
+
+.essentilainfodiv{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .app-name {
@@ -121,6 +157,7 @@ main {
 #personalinfopage {
     display: block;
 }
+
 
 @media (width < 1000px) {
     main {
@@ -185,12 +222,12 @@ main {
         padding: 5px 0px 20px 0px;
     }
 
-    section div h1
-    {
+    section div h1 {
         border-bottom: none;
         padding: 20px 0px 10px 0px;
     }
-    section{
+
+    section {
         width: 90%;
     }
 
