@@ -53,13 +53,13 @@
         <div class="settingsmenu">
             <ul>
                 <li onclick="select(this)" id="personalinfo" class="active">
-                    <p >Personal Information</p>
+                    <p>Personal Information</p>
                 </li>
                 <li onclick="select(this)" id="edit">
-                    <p >Edit Profile</p>
+                    <p>Edit Profile</p>
                 </li>
                 <li onclick="select(this)" id="settings">
-                    <p >Settings</p>
+                    <p>Settings</p>
                 </li>
             </ul>
         </div>
@@ -75,15 +75,33 @@
                     <h1>Name</h1>
                     <button id="name" onclick="essentilainfo(this)">Your Name</button>
                     <div id="namediv" class="essentilainfodiv">
+                        <input type="text" id="nameinput" placeholder="Enter your name">
                     </div>
                     <h1>Dath Of Birth</h1>
                     <button id="birthday" onclick="essentilainfo(this)">Select Birthday</button>
                     <div id="birthdaydiv" class="essentilainfodiv">
+                        <input type="date" id="birthdayinput">
                     </div>
                     <h1>Gender</h1>
                     <button id="gender" onclick="essentilainfo(this)">Select gender</button>
                     <div id="genderdiv" class="essentilainfodiv">
+                        <form action="">
+                        <div>
+                            <input type="radio" id="Male"/>
+                            <label for="Male">Male</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="Female"/>
+                            <label for="Female">Female</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="Other" />
+                            <label for="Other">Other</label>
+                        </div>
                     </div>
+                    </form>
                 </div>
             </section>
 
@@ -112,50 +130,59 @@
         const essentilainfodiv = document.getElementsByClassName("essentilainfodiv");
 
         function select(elm) {
-            elm.classList.toggle("active");
+            personalinfo.classList.remove("active");
+            edit.classList.remove("active");
+            settings.classList.remove("active");
+
+            document.getElementById("personalinfopage").style.display = "none";
+            document.getElementById("editpage").style.display = "none";
+            document.getElementById("settingspage").style.display = "none";
+
             if (elm.id == "personalinfo") {
                 personalinfo.classList.add("active");
-                edit.classList.remove("active");
-                settings.classList.remove("active");
                 document.getElementById("personalinfopage").style.display = "block";
-                document.getElementById("editpage").style.display = "none";
-                document.getElementById("settingspage").style.display = "none";
             } else if (elm.id == "edit") {
-                personalinfo.classList.remove("active");
                 edit.classList.add("active");
-                settings.classList.remove("active");
-                document.getElementById("personalinfopage").style.display = "none";
                 document.getElementById("editpage").style.display = "block";
-                document.getElementById("settingspage").style.display = "none";
             } else if (elm.id == "settings") {
-                personalinfo.classList.remove("active");
-                edit.classList.remove("active");
                 settings.classList.add("active");
-                document.getElementById("personalinfopage").style.display = "none";
-                document.getElementById("editpage").style.display = "none";
                 document.getElementById("settingspage").style.display = "block";
             }
         }
-        function essentilainfo(elm){
+
+        document.getElementById("personalinfopage").style.display = "block";
+        document.getElementById("editpage").style.display = "none";
+        document.getElementById("settingspage").style.display = "none";
+
+        function essentilainfo(elm) {
             const namediv = document.getElementById("namediv");
             const birthdaydiv = document.getElementById("birthdaydiv");
-            const genderdiv = document
-            document.getElementById(elm.id + "div").style.display = "flex";
-            if(elm.id == "name"){
+            const genderdiv = document.getElementById("genderdiv");
+            namediv.style.display = "none";
+            birthdaydiv.style.display = "none";
+            genderdiv.style.display = "none";
+            if (elm.id == "name") {
                 namediv.style.display = "flex";
-                birthdaydiv.style.display = "none";
-                genderdiv.style.display = "none";
-            } else if(elm.id == "birthday"){
-                namediv.style.display = "none";
+            } else if (elm.id == "birthday") {
                 birthdaydiv.style.display = "flex";
-                genderdiv.style.display = "none";
-            } else if(elm.id == gender){
-                namediv.style.display = "none";
-                birthdaydiv.style.display = "none";
+            } else if (elm.id == "gender") {
                 genderdiv.style.display = "flex";
             }
         }
-        essentilainfodiv.addEventListener("")
+        document.addEventListener("click", function (event) {
+            let isInside = false;
+            for (let i = 0; i < essentilainfodiv.length; i++) {
+                if (essentilainfodiv[i].contains(event.target)) {
+                    isInside = true;
+                    break;
+                }
+            }
+            if (event.target.tagName !== "BUTTON" && !isInside) {
+                for (let i = 0; i < essentilainfodiv.length; i++) {
+                    essentilainfodiv[i].style.display = "none";
+                }
+            }
+        });
     </script>
 </body>
 
